@@ -389,7 +389,7 @@
 <li>变量：<strong>$变量名</strong>;变量可以嵌套使用</li>
 <li>要写一大串指向页面中同一块的样式时，往往需要 一遍又一遍地写同一个ID</li>
 </ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#content article h1 &#123; color: #333 &#125;</span><br><span class="line">#content article p &#123; margin-bottom: 1.4em &#125;</span><br><span class="line">#content aside &#123; background-color: #EEE &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#content</span> <span class="selector-tag">article</span> <span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: <span class="number">#333</span> &#125;</span><br><span class="line"><span class="selector-id">#content</span> <span class="selector-tag">article</span> <span class="selector-tag">p</span> &#123; <span class="attribute">margin-bottom</span>: <span class="number">1.4em</span> &#125;</span><br><span class="line"><span class="selector-id">#content</span> <span class="selector-tag">aside</span> &#123; <span class="attribute">background-color</span>: <span class="number">#EEE</span> &#125;</span><br></pre></td></tr></table></figure>
 <p>像这种情况，sass可以让你只写一遍，且使样式可读性更高。<br>
           <!--noindex-->
           <div class="post-button text-center">

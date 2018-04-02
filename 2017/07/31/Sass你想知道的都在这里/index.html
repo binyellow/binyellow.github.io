@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="YellowBin">
 <meta property="og:description" content="变量：$变量名;变量可以嵌套使用 要写一大串指向页面中同一块的样式时，往往需要 一遍又一遍地写同一个ID  123#content article h1 &amp;#123; color: #333 &amp;#125;#content article p &amp;#123; margin-bottom: 1.4em &amp;#125;#content aside &amp;#123; background-color: #EEE">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-02T06:58:07.133Z">
+<meta property="og:updated_time" content="2018-04-02T12:09:32.975Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sass你想知道的都在这里">
 <meta name="twitter:description" content="变量：$变量名;变量可以嵌套使用 要写一大串指向页面中同一块的样式时，往往需要 一遍又一遍地写同一个ID  123#content article h1 &amp;#123; color: #333 &amp;#125;#content article p &amp;#123; margin-bottom: 1.4em &amp;#125;#content aside &amp;#123; background-color: #EEE">
@@ -390,84 +390,110 @@
 <li>变量：<strong>$变量名</strong>;变量可以嵌套使用</li>
 <li>要写一大串指向页面中同一块的样式时，往往需要 一遍又一遍地写同一个ID</li>
 </ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#content article h1 &#123; color: #333 &#125;</span><br><span class="line">#content article p &#123; margin-bottom: 1.4em &#125;</span><br><span class="line">#content aside &#123; background-color: #EEE &#125;</span><br></pre></td></tr></table></figure>
-<p>像这种情况，sass可以让你只写一遍，且使样式可读性更高。<br><a id="more"></a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#content &#123;</span><br><span class="line">	article &#123;</span><br><span class="line">		h1 &#123; color: #333 &#125;</span><br><span class="line">		p &#123; margin-bottom: <span class="number">1.4</span>em &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	aside &#123; background-color: #EEE &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">3. 父选择器的标识符&amp;</span></span><br><span class="line"><span class="string">4. 群组选择器的嵌套：中间用,隔开</span></span><br><span class="line"><span class="string">5. 子组合选择器和同层组合选择器：&gt;、+和~：</span></span><br><span class="line"><span class="string">	- 同层相邻组合选择器+选择header元素后紧跟的p元素：</span></span><br><span class="line"><span class="string">		- `</span>header + p &#123; font-size: <span class="number">1.1</span>em &#125;<span class="string">`</span></span><br><span class="line"><span class="string">	- 同层全体组合选择器~，选择所有跟在article后的同层article元素，不管它们之间隔了多少其他元素：</span></span><br><span class="line">		- `article ~ article &#123; border-top: 1px dashed #ccc &#125;`</span><br><span class="line">	- 子组合选择器&gt;选择一个元素的直接子元素:</span><br><span class="line">		-</span><br></pre></td></tr></table></figure></p>
-<pre><code>        article section { margin: 5px }
-        article &gt; section { border: 1px solid #ccc }
-      <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">		- 上例中，第一个选择器会选择article下的**所有命中**section选择器的元素。第二个选择器只会选择article下**紧跟着的子元素**中命中section选择器的元素。</span><br><span class="line"></span><br><span class="line">6. 嵌套属性:</span><br><span class="line">	-</span><br></pre></td></tr></table></figure>
-
-    nav {
-      border: 1px solid #ccc {
-      left: 0px;
-      right: 0px;
-      }
-    }
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-</span><br></pre></td></tr></table></figure>
-
-    nav {
-      border: 1px solid #ccc;
-      border-left: 0px;
-      border-right: 0px;
-    }
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">7. 导入SASS文件:</span><br><span class="line">	- @import&quot;sidebar&quot;:即把siderbar.scss文件导入进来了，可以省略后缀</span><br><span class="line">		- sass的@import规则在生成css文件时就把相关文件导入进来。这意味着所有相关的样式被归纳到了同一个css文件中，而无需发起额外的下载请求</span><br><span class="line">	- 只导入部分scss文件：</span><br><span class="line">		- 那些专门为@import命令而编写的sass文件，并不需要生成对应的独立css文件，这样的sass文件称为局部文件</span><br><span class="line">		- sass局部文件的文件名以下划线开头：_night-sky.scss</span><br><span class="line">		- 你导入时可以不写文件的全名，即省略文件名开头的下划线。(`themes/\_night-sky.scss=&gt;@import &quot;themes/night-sky&quot;;`)</span><br><span class="line">	- 默认变量值:`$fancybox-width: 400px !default;`</span><br><span class="line">	- 嵌套导入：</span><br><span class="line">		- _blue-theme.scss文件内容如下</span><br><span class="line">			-</span><br></pre></td></tr></table></figure>
-
-            aside {
-              background: blue;
-              color: white;
-            }
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 现在想把他导入`.blue-theme &#123;@import &quot;blue-theme&quot;&#125;`这个类中</span><br><span class="line">-</span><br></pre></td></tr></table></figure>
-
-            .blue-theme {
-              aside {
-                background: blue;
-                color: #fff;
-              }
-            }
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 原生的CSS导入:你可以把原始的css文件改名为.scss后缀，即可直接导入了。</span><br><span class="line">- 静默注释:不希望每个浏览网站源码的人都能看到所有注释</span><br><span class="line">	-</span><br></pre></td></tr></table></figure>
-
-        body {
-          color: #333; // 这种注释内容不会出现在生成的css文件中
-          padding: 0; /* 这种注释内容会出现在生成的css文件中 */
-        }
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- css的标准注释格式/* ... */内的注释内容亦可在生成的css文件中抹去。</span><br><span class="line">	- 注释出现在原生css不允许的地方，如在css属性或选择器中，sass将不知如何将其生成到对应css文件中的相应位置，于是这些注释被抹掉。</span><br><span class="line">	-</span><br></pre></td></tr></table></figure>
-
-            body {
-              color /* 这块注释内容不会出现在生成的css中 */: #333;
-              padding: 1; /* 这块注释内容也不会出现在生成的css中 */ 0;
-            }
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 混合器:大段大段的重用样式的代码---使用@mixin标识符定义</span><br><span class="line">	-</span><br></pre></td></tr></table></figure>
-
-        @mixin rounded-corners {
-          -moz-border-radius: 5px;
-          -webkit-border-radius: 5px;
-          border-radius: 5px;
-        }
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用</span><br></pre></td></tr></table></figure>
-
-        notice {
-          background-color: green;
-          border: 2px solid #00aa00;
-          @include rounded-corners;
-        }
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- 传参：</span><br><span class="line">	```  </span><br><span class="line">	@mixin link-colors($normal, $hover, $visited) &#123;</span><br><span class="line">	  color: $normal;</span><br><span class="line">	  &amp;:hover &#123; color: $hover; &#125;</span><br><span class="line">	  &amp;:visited &#123; color: $visited; &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	```  </span><br><span class="line">	`a &#123;@include link-colors(blue, red, green);&#125;`  </span><br><span class="line">	最终生成：</span><br></pre></td></tr></table></figure>
-
-        a { color: blue; }
-        a:hover { color: red; }
-        a:visited { color: green; }
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8. 使用选择器继承来精简CSS</span><br></pre></td></tr></table></figure>
-
-.error {
-  border: 1px solid red;
-  background-color: #fdd;
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#content</span> <span class="selector-tag">article</span> <span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: <span class="number">#333</span> &#125;</span><br><span class="line"><span class="selector-id">#content</span> <span class="selector-tag">article</span> <span class="selector-tag">p</span> &#123; <span class="attribute">margin-bottom</span>: <span class="number">1.4em</span> &#125;</span><br><span class="line"><span class="selector-id">#content</span> <span class="selector-tag">aside</span> &#123; <span class="attribute">background-color</span>: <span class="number">#EEE</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>像这种情况，sass可以让你只写一遍，且使样式可读性更高。<br><a id="more"></a></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#content</span> &#123;</span><br><span class="line">	article &#123;</span><br><span class="line">		<span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: <span class="number">#333</span> &#125;</span><br><span class="line">		<span class="selector-tag">p</span> &#123; <span class="attribute">margin-bottom</span>: <span class="number">1.4em</span> &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-tag">aside</span> &#123; <span class="attribute">background-color</span>: <span class="number">#EEE</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>父选择器的标识符&amp;</li>
+<li>群组选择器的嵌套：中间用,隔开</li>
+<li><p>子组合选择器和同层组合选择器：&gt;、+和~：</p>
+<ul>
+<li>同层相邻组合选择器+选择header元素后紧跟的p元素：</li>
+<li><code>header + p { font-size: 1.1em }</code></li>
+<li>同层全体组合选择器~，选择所有跟在article后的同层article元素，不管它们之间隔了多少其他元素：</li>
+<li><code>article ~ article { border-top: 1px dashed #ccc }</code></li>
+<li>子组合选择器&gt;选择一个元素的直接子元素:</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">article section &#123; margin: 5px &#125;</span><br><span class="line">article &gt; section &#123; border: 1px solid #ccc &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上例中，第一个选择器会选择article下的<strong>所有命中</strong>section选择器的元素。第二个选择器只会选择article下<strong>紧跟着的子元素</strong>中命中section选择器的元素。</p>
+</li>
+</ul>
+</li>
+<li><p>嵌套属性:</p>
+</li>
+</ol>
+<ul>
+<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span> &#123;</span><br><span class="line">	left: <span class="number">0px</span>;</span><br><span class="line">	<span class="attribute">right</span>: <span class="number">0px</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">	<span class="attribute">border-left</span>: <span class="number">0px</span>;</span><br><span class="line">	<span class="attribute">border-right</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="7">
+<li><p>导入SASS文件:</p>
+<ul>
+<li>@import”sidebar”:即把siderbar.scss文件导入进来了，可以省略后缀<ul>
+<li>sass的@import规则在生成css文件时就把相关文件导入进来。这意味着所有相关的样式被归纳到了同一个css文件中，而无需发起额外的下载请求</li>
+</ul>
+</li>
+<li>只导入部分scss文件：<ul>
+<li>那些专门为@import命令而编写的sass文件，并不需要生成对应的独立css文件，这样的sass文件称为局部文件</li>
+<li>sass局部文件的文件名以下划线开头：_night-sky.scss</li>
+<li>你导入时可以不写文件的全名，即省略文件名开头的下划线。(<code>themes/\_night-sky.scss=&gt;@import &quot;themes/night-sky&quot;;</code>)</li>
+</ul>
+</li>
+<li>默认变量值:<code>$fancybox-width: 400px !default;</code></li>
+<li><p>嵌套导入：</p>
+<ul>
+<li><p>_blue-theme.scss文件内容如下</p>
+<ul>
+<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">aside</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: blue;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>现在想把他导入<code>.blue-theme {@import &quot;blue-theme&quot;}</code>这个类中</p>
+</li>
+<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.blue-theme</span> &#123;</span><br><span class="line">  aside &#123;</span><br><span class="line">    <span class="selector-tag">background</span>: <span class="selector-tag">blue</span>;</span><br><span class="line">    <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>原生的CSS导入:你可以把原始的css文件改名为.scss后缀，即可直接导入了。</p>
+</li>
+<li><p>静默注释:不希望每个浏览网站源码的人都能看到所有注释</p>
+<ul>
+<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  color: #333; // 这种注释内容不会出现在生成的css文件中</span><br><span class="line">  <span class="selector-tag">padding</span>: 0; <span class="comment">/* 这种注释内容会出现在生成的css文件中 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>css的标准注释格式/<em> … </em>/内的注释内容亦可在生成的css文件中抹去。</p>
+<ul>
+<li>注释出现在原生css不允许的地方，如在css属性或选择器中，sass将不知如何将其生成到对应css文件中的相应位置，于是这些注释被抹掉。</li>
+<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  color /* 这块注释内容不会出现在生成的css中 */: #333;</span><br><span class="line">  <span class="selector-tag">padding</span>: 1; <span class="comment">/* 这块注释内容也不会出现在生成的css中 */</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>混合器:大段大段的重用样式的代码—使用@mixin标识符定义</p>
+<ul>
+<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">mixin</span> rounded-corners &#123;</span><br><span class="line">  <span class="selector-tag">-moz-border-radius</span>: 5<span class="selector-tag">px</span>;</span><br><span class="line">  <span class="selector-tag">-webkit-border-radius</span>: 5<span class="selector-tag">px</span>;</span><br><span class="line">  <span class="selector-tag">border-radius</span>: 5<span class="selector-tag">px</span>;</span><br><span class="line">&#125;</span><br><span class="line">```  </span><br><span class="line">引用</span><br><span class="line">```<span class="selector-tag">css</span></span><br><span class="line"><span class="selector-tag">notice</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: green;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#00aa00</span>;</span><br><span class="line">  @include rounded-corners;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>传参：</p>
+<pre><code class="css">@<span class="keyword">mixin</span> link-colors($normal, $hover, $visited) {
+  color: $normal;
+  &amp;<span class="selector-pseudo">:hover</span> { <span class="attribute">color</span>: $hover; }
+  &amp;<span class="selector-pseudo">:visited</span> { <span class="attribute">color</span>: $visited; }
 }
-.seriousError {
-  @extend .error;
-  border-width: 3px;
-}
-```  
-.seriousError不仅会继承.error自身的所有样式，任何跟.error有关的组合选择器样式也会被.seriousError以组合选择器的形式继承
-&lt;!--more--&gt;
 </code></pre>
+<p>  <code>a {@include link-colors(blue, red, green);}</code><br>  最终生成：</p>
+<pre><code class="css"><span class="selector-tag">a</span> { <span class="attribute">color</span>: blue; }
+<span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> { <span class="attribute">color</span>: red; }
+<span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> { <span class="attribute">color</span>: green; }
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用选择器继承来精简CSS<pre><code class="css"><span class="selector-class">.error</span> {
+ <span class="attribute">border</span>: <span class="number">1px</span> solid red;
+ <span class="attribute">background-color</span>: <span class="number">#fdd</span>;
+}
+<span class="selector-class">.seriousError</span> {
+ @extend .error;
+ <span class="selector-tag">border-width</span>: 3<span class="selector-tag">px</span>;
+}
+</code></pre>
+.seriousError不仅会继承.error自身的所有样式，任何跟.error有关的组合选择器样式也会被.seriousError以组合选择器的形式继承<!--more--></li>
+</ol>
+
       
     </div>
     
