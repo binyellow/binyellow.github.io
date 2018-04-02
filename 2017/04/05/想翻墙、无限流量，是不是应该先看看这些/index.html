@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2017/04/05/img/network/https.png">
 <meta property="og:image" content="http://yoursite.com/2017/04/05/img/network/OSI.jpg">
-<meta property="og:updated_time" content="2018-04-02T14:35:49.165Z">
+<meta property="og:updated_time" content="2018-04-02T14:46:04.429Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="想翻墙、无限流量，是不是应该先看看这些">
 <meta name="twitter:description" content="HTTPS 啥都别说先整张图 SSL加密层: 把http的内容加密后送到下层的TCP，从接收方看，这一层负责将TCP送来的数据解密还原成http的内容 数字证书：一种文件的名称，好比一个机构或人的签名，能够证明这个机构或人的真实性。其中包含的信息，用于实现上述功能 加密: 将明文通过加密变成密文，如果第三方无法解密的话，就算他获得密文也无能为力 对称加密：加密和解密使用相同的密钥 非对称密码算法:">
@@ -389,7 +389,7 @@
       
 
       
-        <h4 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h4><ul>
+        <h3 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h3><ul>
 <li>啥都别说先整张图<br><img src="../img/network/https.png" alt=""></li>
 <li><strong>SSL加密层</strong>: 把http的内容加密后送到下层的TCP，从接收方看，这一层负责将TCP送来的数据解密还原成http的内容<ul>
 <li><strong>数字证书</strong>：一种文件的名称，好比一个机构或人的签名，能够证明这个机构或人的真实性。其中包含的信息，用于实现上述功能</li>
@@ -407,11 +407,11 @@
 </ul>
 </li>
 <li><strong>认证</strong>是指通信双方为了确认对方是值得信任的消息发送或接受方,相当于一个鉴定中心颁发的证书<a id="more"></a>
-<h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3><h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4></li>
+</li>
 </ul>
 </li>
 </ul>
-<ol>
+<h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3><h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><ol>
 <li>参数解释<ul>
 <li>seq: 标识字节流</li>
 <li>ack: ack=seq+1,确认序号</li>
@@ -429,22 +429,22 @@
 </ul>
 </li>
 </ol>
-<h4 id="什么是VPN"><a href="#什么是VPN" class="headerlink" title="什么是VPN"></a>什么是VPN</h4><ul>
-<li>vpn–虚拟专用网络，它的功能是：在公用网络上建立专用网络，进行加密通讯。你和vpn之间的通信是否加密，取决于你连接vpn的方式或者协议<h4 id="SS-SSR-SSL-TSL"><a href="#SS-SSR-SSL-TSL" class="headerlink" title="SS-SSR-SSL-TSL"></a>SS-SSR-SSL-TSL</h4></li>
+<h3 id="什么是VPN"><a href="#什么是VPN" class="headerlink" title="什么是VPN"></a>什么是VPN</h3><ul>
+<li>vpn–虚拟专用网络，它的功能是：在公用网络上建立专用网络，进行加密通讯。你和vpn之间的通信是否加密，取决于你连接vpn的方式或者协议<h3 id="SS-SSR-SSL-TSL"><a href="#SS-SSR-SSL-TSL" class="headerlink" title="SS-SSR-SSL-TSL"></a>SS-SSR-SSL-TSL</h3></li>
 <li>shadowsocks(影梭): ss和ssr它的原理都是一样的，就是socks5代理,socks5代理是把你的网络数据请求通过一条连接你和代理服务器之间的通道，由服务器转发到目的地，这个过程中你是没有通过一条专用通道的，只是数据包的发出，然后被代理服务器收到</li>
 <li>ssr: 支持协议转换、协议混淆、多重代理。SS开源，SSR闭源</li>
 <li>SSL(Secure Socket Layer): SSL是VPN的一种实现方式</li>
 <li>TSL相当于是SSL的升级版</li>
-<li><a href="https://blog.csdn.net/ShellDawn/article/details/78345240" target="_blank" rel="noopener">更多</a><h4 id="PAC-直连模式-全局模式"><a href="#PAC-直连模式-全局模式" class="headerlink" title="PAC-直连模式-全局模式"></a>PAC-直连模式-全局模式</h4></li>
+<li><a href="https://blog.csdn.net/ShellDawn/article/details/78345240" target="_blank" rel="noopener">更多</a><h3 id="PAC-直连模式-全局模式"><a href="#PAC-直连模式-全局模式" class="headerlink" title="PAC-直连模式-全局模式"></a>PAC-直连模式-全局模式</h3></li>
 <li>PAC: 国内地址不走代理，国外走代理</li>
 <li>直连模式: 流量不走代理</li>
-<li>全局：全部走代理<h4 id="混淆"><a href="#混淆" class="headerlink" title="混淆"></a>混淆</h4></li>
+<li>全局：全部走代理<h3 id="混淆"><a href="#混淆" class="headerlink" title="混淆"></a>混淆</h3></li>
 <li>协议插件: 定义加密前的协议，通常用于长度混淆及增强安全性和隐蔽性</li>
-<li>混淆：为了伪装，使原本的上网数据伪装成其他的数据，访问HTTPS网站的时候会用SSL证书把网站加密起来<h4 id="Nginx正向-反向代理"><a href="#Nginx正向-反向代理" class="headerlink" title="Nginx正向-反向代理"></a>Nginx正向-反向代理</h4></li>
+<li>混淆：为了伪装，使原本的上网数据伪装成其他的数据，访问HTTPS网站的时候会用SSL证书把网站加密起来<h3 id="Nginx正向-反向代理"><a href="#Nginx正向-反向代理" class="headerlink" title="Nginx正向-反向代理"></a>Nginx正向-反向代理</h3></li>
 <li>正向代理：当我们要访问google时,用代理服务器访问,那么要访问的服务器是明确的,但是服务器不知道是哪个客户端</li>
 <li>反向代理：像淘宝这种流量巨大的网站,当某台服务器负载扛不住的时候,Nginx接受到客户端的请求时,会根据一定的规则来分发给不同的服务器,此时客户端是明确的,服务器却不明确了</li>
 </ul>
-<h4 id="OSI"><a href="#OSI" class="headerlink" title="OSI"></a>OSI</h4><p><img src="../img/network/OSI.jpg" alt=""></p>
+<h3 id="OSI"><a href="#OSI" class="headerlink" title="OSI"></a>OSI</h3><p><img src="../img/network/OSI.jpg" alt=""></p>
 <ul>
 <li>应用层：邮件、文件传输、HTTP超文本传输协议等,为用户的应用程序（例如电子邮件、文件传输和终端仿真）提供网络服务</li>
 <li>表示层：确保一个系统的应用层所发送的信息可以被另一个系统的应用层读取</li>
@@ -708,7 +708,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTPS"><span class="nav-number">1.</span> <span class="nav-text">HTTPS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP"><span class="nav-number"></span> <span class="nav-text">TCP/IP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是VPN"><span class="nav-number">3.</span> <span class="nav-text">什么是VPN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SS-SSR-SSL-TSL"><span class="nav-number">4.</span> <span class="nav-text">SS-SSR-SSL-TSL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PAC-直连模式-全局模式"><span class="nav-number">5.</span> <span class="nav-text">PAC-直连模式-全局模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混淆"><span class="nav-number">6.</span> <span class="nav-text">混淆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx正向-反向代理"><span class="nav-number">7.</span> <span class="nav-text">Nginx正向-反向代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OSI"><span class="nav-number">8.</span> <span class="nav-text">OSI</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SOCKET"><span class="nav-number"></span> <span class="nav-text">SOCKET</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Socket-连接-至少需要一对套接字，分为-clientSocket，serverSocket-连接分为3个步骤"><span class="nav-number">0.1.</span> <span class="nav-text">Socket 连接,至少需要一对套接字，分为 clientSocket，serverSocket 连接分为3个步骤:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS"><span class="nav-number">1.</span> <span class="nav-text">HTTPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP"><span class="nav-number">2.</span> <span class="nav-text">TCP/IP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">2.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是VPN"><span class="nav-number">3.</span> <span class="nav-text">什么是VPN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SS-SSR-SSL-TSL"><span class="nav-number">4.</span> <span class="nav-text">SS-SSR-SSL-TSL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PAC-直连模式-全局模式"><span class="nav-number">5.</span> <span class="nav-text">PAC-直连模式-全局模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混淆"><span class="nav-number">6.</span> <span class="nav-text">混淆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx正向-反向代理"><span class="nav-number">7.</span> <span class="nav-text">Nginx正向-反向代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI"><span class="nav-number">8.</span> <span class="nav-text">OSI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SOCKET"><span class="nav-number">9.</span> <span class="nav-text">SOCKET</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Socket-连接-至少需要一对套接字，分为-clientSocket，serverSocket-连接分为3个步骤"><span class="nav-number">9.0.1.</span> <span class="nav-text">Socket 连接,至少需要一对套接字，分为 clientSocket，serverSocket 连接分为3个步骤:</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
