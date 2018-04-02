@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Sass你想知道的都在这里]]></title>
+    <url>%2F2017%2F07%2F31%2FSass%E4%BD%A0%E6%83%B3%E7%9F%A5%E9%81%93%E7%9A%84%E9%83%BD%E5%9C%A8%E8%BF%99%E9%87%8C%2F</url>
+    <content type="text"><![CDATA[变量：$变量名;变量可以嵌套使用 要写一大串指向页面中同一块的样式时，往往需要 一遍又一遍地写同一个ID 123#content article h1 &#123; color: #333 &#125;#content article p &#123; margin-bottom: 1.4em &#125;#content aside &#123; background-color: #EEE &#125; 像这种情况，sass可以让你只写一遍，且使样式可读性更高。123456789101112131415161718#content &#123; article &#123; h1 &#123; color: #333 &#125; p &#123; margin-bottom: 1.4em &#125; &#125; aside &#123; background-color: #EEE &#125;&#125;``` 3. 父选择器的标识符&amp;4. 群组选择器的嵌套：中间用,隔开5. 子组合选择器和同层组合选择器：&gt;、+和~： - 同层相邻组合选择器+选择header元素后紧跟的p元素： - `header + p &#123; font-size: 1.1em &#125;` - 同层全体组合选择器~，选择所有跟在article后的同层article元素，不管它们之间隔了多少其他元素： - `article ~ article &#123; border-top: 1px dashed #ccc &#125;` - 子组合选择器&gt;选择一个元素的直接子元素: - article section { margin: 5px } article &gt; section { border: 1px solid #ccc } 1234 - 上例中，第一个选择器会选择article下的**所有命中**section选择器的元素。第二个选择器只会选择article下**紧跟着的子元素**中命中section选择器的元素。6. 嵌套属性: - nav { border: 1px solid #ccc { left: 0px; right: 0px; } } 1- nav { border: 1px solid #ccc; border-left: 0px; border-right: 0px; } 1234567891011127. 导入SASS文件: - @import&quot;sidebar&quot;:即把siderbar.scss文件导入进来了，可以省略后缀 - sass的@import规则在生成css文件时就把相关文件导入进来。这意味着所有相关的样式被归纳到了同一个css文件中，而无需发起额外的下载请求 - 只导入部分scss文件： - 那些专门为@import命令而编写的sass文件，并不需要生成对应的独立css文件，这样的sass文件称为局部文件 - sass局部文件的文件名以下划线开头：_night-sky.scss - 你导入时可以不写文件的全名，即省略文件名开头的下划线。(`themes/\_night-sky.scss=&gt;@import &quot;themes/night-sky&quot;;`) - 默认变量值:`$fancybox-width: 400px !default;` - 嵌套导入： - _blue-theme.scss文件内容如下 - aside { background: blue; color: white; } 12- 现在想把他导入`.blue-theme &#123;@import &quot;blue-theme&quot;&#125;`这个类中- .blue-theme { aside { background: blue; color: #fff; } } 123- 原生的CSS导入:你可以把原始的css文件改名为.scss后缀，即可直接导入了。- 静默注释:不希望每个浏览网站源码的人都能看到所有注释 - body { color: #333; // 这种注释内容不会出现在生成的css文件中 padding: 0; /* 这种注释内容会出现在生成的css文件中 */ } 123- css的标准注释格式/* ... */内的注释内容亦可在生成的css文件中抹去。 - 注释出现在原生css不允许的地方，如在css属性或选择器中，sass将不知如何将其生成到对应css文件中的相应位置，于是这些注释被抹掉。 - body { color /* 这块注释内容不会出现在生成的css中 */: #333; padding: 1; /* 这块注释内容也不会出现在生成的css中 */ 0; } 12- 混合器:大段大段的重用样式的代码---使用@mixin标识符定义 - @mixin rounded-corners { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; } 1引用 notice { background-color: green; border: 2px solid #00aa00; @include rounded-corners; } 12345678910- 传参： ``` @mixin link-colors($normal, $hover, $visited) &#123; color: $normal; &amp;:hover &#123; color: $hover; &#125; &amp;:visited &#123; color: $visited; &#125; &#125; ``` `a &#123;@include link-colors(blue, red, green);&#125;` 最终生成： a { color: blue; } a:hover { color: red; } a:visited { color: green; } 18. 使用选择器继承来精简CSS .error { border: 1px solid red; background-color: #fdd; } .seriousError { @extend .error; border-width: 3px; } ``` .seriousError不仅会继承.error自身的所有样式，任何跟.error有关的组合选择器样式也会被.seriousError以组合选择器的形式继承 &lt;!--more--&gt;]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>sass</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown语法，看这里就够了]]></title>
+    <url>%2F2017%2F06%2F20%2FMarkdown%E8%AF%AD%E6%B3%95%EF%BC%8C%E7%9C%8B%E8%BF%99%E9%87%8C%E5%B0%B1%E5%A4%9F%E4%BA%86%2F</url>
+    <content type="text"><![CDATA[标题：# —######分别为6级标题 区块引用blockquotes或者&gt; 列表 无序列表：使用*、+或是-作为列表标记 有序列表：使用数字+英文句点 代码区块：用pre 和 code 标签 | 多行代码用``` `js包起来 分隔线：用三个以上的星号、减号、底线来建立一个分隔线 链接：链接内容定义的形式为：[name](link) 图片：![]() 强调：-- – 斜体： 删除线：~~ ~~ 表格：使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行 列表前面加v,X:[X] 注释&lt;!–content–&gt; 链接补充：当链接到#Title时,#后要全部小写]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Flex-Grid]]></title>
+    <url>%2F2017%2F06%2F02%2FFlex-Grid%2F</url>
+    <content type="text"><![CDATA[Flex GridFlex 采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。 容器默认存在两根轴 ：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。 容器的属性:[display:flex] flex-direction:主轴的方向(flex-direction: row | row-reverse | column | column-reverse;) flex-wrap:如果一条轴线排不下，如何换行(flex-wrap: nowrap(不换行) | wrap (换行第一行在上方)| wrap-reverse;) flex-flow:flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap justify-content:项目在主轴上的对齐方式(justify-content: flex-start | flex-end | center | space-between | space-around;) flex-start（默认值）：左对齐 flex-end：右对齐 center： 居中 space-between：两端对齐，项目之间的间隔都相等。 space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。 align-items:项目在交叉轴上如何对齐 flex-start：交叉轴的起点对齐。 flex-end：交叉轴的终点对齐。 center：交叉轴的中点对齐。 baseline: 项目的第一行文字的基线对齐。 stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。 align-content:定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用 flex-start：与交叉轴的起点对齐。 flex-end：与交叉轴的终点对齐。 center：与交叉轴的中点对齐。 space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。 space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。 stretch（默认值）：轴线占满整个交叉轴。 注意：父容器要给高度，align-content是在flex-wrap使得排成2行以上才生效 align-items和align-content的不同：items是每个元素都居中，content是行相对居中 项目的属性 order:定义项目的排列顺序。数值越小，排列越靠前，默认为0。 flex-grow:定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。 flex-shrink:定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。为0则不会缩小 flex-basis:定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。 flex:属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。 该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。 align-self:属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。 .item {align-self: auto | flex-start | flex-end | center | baseline | stretch;} 项目属性和容器属性分别作用在对应的元素上 设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效 更多 Grid网格布局父元素 display:grid; grid-template-columns:100px 100px 100px; grid-template-rows:100px 100px 100px; 子元素 grid-column: 1/4从第1到第4格结束：3格 grid-row: 2/5]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>flex</tag>
+        <tag>grid</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git ssh]]></title>
+    <url>%2F2017%2F01%2F02%2Fgit-ssh%2F</url>
+    <content type="text"><![CDATA[创建过程 在github上创建项目 使用Git clone 你的项目 克隆到本地 编辑项目 git add . :将改动添加到暂存区 git commit -m :提交说明 git pull origin master 如果在github的remote上已经有了文件，会出现错误。此时应当先pull一下 git push origin master 将本地更改推送到远程master分支。 同时可以在本地使用git init 添加远程仓库git remote origin git@github.com:binyellow/binyellow.github.io.git SSH设置和免密 设置Git的user name和email：(如果是第一次的话) 12$ git config --global user.name "yourname" $ git config --global user.email "yuor mail" 生成密钥 $ ssh-keygen -t rsa -C &quot;humingx@yeah.net&quot;按回车，最后得到了两个文件：id_rsa和id_rsa.pub。 将id_rsa.pub全部复制到自己gitlab代码库的SSH KEYS.(SSH KEYS的位置：打开自己的gitlab,点击右上角的倒三角，选择profile seetings,进去该页面后选择SSH KEYS) 修改你本地的ssh remote url. 不用https协议，改用git 协议可以用git remote -v 查看你当前的remote url $ Git remote -v origin https://github.com/someaccount/someproject.git (fetch) origin https://github.com/someaccount/someproject.git (push) 可以看到是使用https协议进行访问的。你可以使用浏览器登陆你的github，在上面可以看到你的ssh协议相应的url。类似如下： `git@github.com:someaccount/someproject.git`这时，你可以使用git remote set-url 来调整你的url。 git remote set-url origin`git@github.com:someaccount/someproject.git`完了之后，你便可以再用 git remote -v 查看一下。之后再执行git pull和git push就不需要输入密码了。]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo+github搭建自己的博客]]></title>
+    <url>%2F2016%2F12%2F03%2Fhexo-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[前期准备工作 首先你要在github上生成name.github.io项目(name是你的注册名不是昵称)，并将SSH密钥设置到github上，这里可以参考我git标签下的一篇SSH免密文章 安装hexo npm install -g hexo hexo init s(会生成一个欢迎界面并开启服务，你可以预览) 换个炫酷点的主题吧git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia(会下载yilia主题到themes下) 配置主题：将根目录的_config.yml中的theme: landscape改为theme: yilia，然后重新执行hexo clean g来重新生成 关于主题内的内容和头像要进themes的_config.yml中修改，头像放在source下(source是相对起点) 修改上传配置(在根目录_config.yml末尾添加) 1234deploy: type: git repository: git@github.com:binyellow/binyellow.github.io.git(你name.github.io项目clone选项的ssh地址) branch: master 写文章 创建一个文件夹，如：myBog，cd到myBog里执行hexo init命令，初始化工程，生成配置文件等 执行hexo new &quot;titlename&quot;(titlename就是文章名字),执行完会在source/_posts下生成titlename.md文件 执行hexo generate（hexo g）会在public文件夹下生成HTML等 执行hexo server(heo s)开启服务器，可在localhost:4000下先调试 部署到线上，执行三个命令 hexo clean(清除生成的html文件) hexo generate（hexo g生成html） hexo deploy(hexo d上传到github上)或者直接执行 hexo c &amp;&amp; hexo g &amp;&amp; hexo d 常用命令 hexo new “postName” #新建文章 hexo new page “pageName” #新建页面 hexo generate #生成静态页面至public目录 hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server） hexo deploy #将.deploy目录部署到GitHub hexo help #查看帮助 hexo version #查看Hexo的版本 小tips 问：如何让文章想只显示一部分和一个 阅读全文 的按钮？答：在文章中加一个 &lt;!–more–&gt; ， &lt;!–more–&gt; 后面的内容就不会显示出来了。 问：本地部署成功了，也能预览效果，但使用 username.github.io 访问，出现 404 .答：首先确认 hexo d 命令执行是否报错，如果没有报错，再查看一下你的 github 的 username.github.io 仓库，你的博客是否已经成功提交了，你的 github 邮箱也要通过验证才行。 3.几版本hexo d失败怎么办？npm install hexo-deployer-git 我怎么备份我的md和主题配置呢？ 123456git initgit checkout -b hexogit add .git commit -m 'add code'git git remote add origin git@github.com:binyellow/binyellow.github.io.git //把远程地址添加到配置文件git push 添加阅读量 其他主题next 可以参考 这里 不蒜子比较简单易用，样式自己可以去css 添加评论模块可以参考这篇文章：评论模块 这里先总结下： 网易云评论：必须要有自己的域名，通过绑定域名2. Disqus：我用的这个，但是使用要翻墙 多说已经不再维护了 友言不支持https 之后也会把博客和学习笔记搬到这里和大家分享:):)tips:想要评论和查看评论先翻墙]]></content>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[垂直居中，你知道多少]]></title>
+    <url>%2F2016%2F11%2F13%2F%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%EF%BC%8C%E4%BD%A0%E7%9F%A5%E9%81%93%E5%A4%9A%E5%B0%91%2F</url>
+    <content type="text"><![CDATA[常见垂直居中方式 相对定位 12345678910.content &#123; position: relative; top: 50%; //垂直居中 margin:0 auto;//水平居中 margin-top: -100px;//减去自身的高度一半 background-color: #6699FF; width: 200px; height: 200px;&#125; 绝对定位: 12345678910content&#123; width: 300px; height: 300px; background: orange; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);//CSS3新特性 不需要知道自身宽高&#125; Flex布局 父容器：12345wrapper&#123; justify-content: center;//项目在主轴上的对齐方式（X） align-items: center; //项目在交叉轴上如何对齐 display: -webkit-flex;&#125;]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>position</tag>
+      </tags>
+  </entry>
+</search>
