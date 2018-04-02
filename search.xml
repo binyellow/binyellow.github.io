@@ -77,4 +77,17 @@
         <tag>position</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[H5-CSS3]]></title>
+    <url>%2F2016%2F10%2F18%2FH5-CSS3%2F</url>
+    <content type="text"><![CDATA[CSS3Animation 首先先定义动画1234567@-webkit-keyframes name &#123; 0% &#123;background:red; left:0px; top:0px;&#125; 25% &#123;background:yellow; left:200px; top:0px;&#125; 50% &#123;background:blue; left:200px; top:200px;&#125; 75% &#123;background:green; left:0px; top:200px;&#125; 100% &#123;background:red; left:0px; top:0px;&#125;&#125; 使用动画,并设置动画属性123div &#123; animate: move 3s ease-in-out infinite alternate;&#125; animate-name: 动画名 animate-duration: 持续时间 animate-timing-function:linear |ease |ease-in |ease-out |ease-in-out: 动画速度曲线 animate-delay: 延迟执行 animate-iteration-count: 执行次数 animate-direction: normal |alternate: 逆向执行 animate-fill-mode: none |forwards |backwards |both: 最后的状态,默认回到最初的状态,backwards和none是回到最初,其他保留最后状态 Transition1234567div s&#123; width:100px; transition: width 2s; -moz-transition: width 2s; /* Firefox 4 */ -webkit-transition: width 2s; /* Safari 和 Chrome */ -o-transition: width 2s; /* Opera */&#125; transition-property: 过渡效果的css属性(width) transition-duration: 过渡时间 transition-timing-function: 速度曲线 transition-delay: 延时 媒体查询123@media mediatype and|not|only (media feature) &#123; CSS-Code;&#125; 媒体类型: screen、all 媒体功能: min-width(注意这里是符合最小宽度的意思)… 注意: 媒体查询要放到样式后面 更多 怪异盒模型 当html顶部不声明doctype时,width=border+padding 在CSS3中可以设置box-sizing: border-box |content-box content-increment 先定义counter-reset计数器: 这个定义在哪,他的作用于就在定义的区块内 counter-increment(计数器) counter(计数器) 详解 Tranform2D/3D转换 translate(x,y): 平移 scale(x,y): 缩放 rotate(x deg): 倾斜角度 skew(x,y) 几种布局怪异盒模型 当html顶部不声明doctype时,width=border+padding 在CSS3中可以设置box-sizing: border-box |content-box 定位 相对定位relative: 仍占用原来位置,相对正常文档流偏移 绝对定位absolute: 脱离文档流,相对不为stctic的父元素定位 浮动float: 脱离文档流,clear的含义是当前元素的某个位置没有浮动元素 流式布局 宽度用百分比,高度固定,会导致缩放不正常 弹性布局、flex布局、Grid布局 包裹文字的父元素用em做单位,会使文字随页面缩放 自适应布局 使用媒体查询来适应不同尺寸 响应式布局 使用媒体查询+流式布局+弹性布局 圣杯、双飞翼布局：是基于2边浮动、中间overflow:hidden、然后margin-left:100%,-width;会向左移的原理实现的]]></content>
+      <categories>
+        <category>css</category>
+        <category>html</category>
+      </categories>
+      <tags>
+        <tag>H5</tag>
+        <tag>CSS3</tag>
+      </tags>
+  </entry>
 </search>
