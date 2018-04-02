@@ -7,7 +7,7 @@
   },
   "scripts": {
     "d":"hexo clean && hexo g && hexo d",
-    "add":"git add .&&git commit -m 'add'&&git push"
+    "git":"git add .&&git commit -m 'add'&&git push"
   },
   "dependencies": {
     "hexo": "^3.2.0",
