@@ -2,8 +2,8 @@
 title: Markdown语法，看这里就够了
 date: 2017-02-20 23:46:00
 tags: 
-    - markdown
-categories: markdown
+    - Markdown
+categories: Markdown
 ---
 1. 标题：# ---######分别为6级标题 
 2.  区块引用blockquotes或者>  

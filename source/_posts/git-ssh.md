@@ -2,8 +2,8 @@
 title: git ssh
 date: 2017-01-02 14:37:03
 tags: 
-    - git
-categories: git
+    - Git
+categories: Git
 ---
 ### 创建过程
 1. 在github上创建项目

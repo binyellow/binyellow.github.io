@@ -3,7 +3,7 @@ title: hexo+github搭建自己的博客
 date: 2016-12-03 15:39:37
 tags: 
     - Hexo
-    - github
+    - Github
 ---
 ### 前期准备工作
 1. 首先你要在github上生成name.github.io项目(name是你的注册名不是昵称)，并将SSH密钥设置到github上，这里可以参考我git标签下的一篇[SSH免密](https://binyellow.github.io/2017/04/29/yellowbin/)文章  

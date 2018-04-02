@@ -2,8 +2,8 @@
 title: Sass你想知道的都在这里
 date: 2017-7-31 12:22:29
 tags: 
-	- sass
-categories: css
+	- Sass
+categories: CSS
 ---
 1. 变量：**$变量名**;变量可以嵌套使用
 2. 要写一大串指向页面中同一块的样式时，往往需要 一遍又一遍地写同一个ID
