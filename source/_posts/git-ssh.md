@@ -5,6 +5,7 @@ tags:
     - git
 categories: git
 ---
+### 创建过程
 1. 在github上创建项目
 2. 使用Git clone 你的项目 克隆到本地
 3. 编辑项目 
@@ -13,14 +14,17 @@ categories: git
 6. `git pull origin master` 如果在github的remote上已经有了文件，会出现错误。此时应当先pull一下
 7. `git push origin master` 将本地更改推送到远程master分支。
 <!--more-->
-SSH设置和免密
-1.  设置Git的user name和email：(如果是第一次的话)
+8. 同时可以在本地使用`git init`
+9. 添加远程仓库`git remote origin git@github.com:binyellow/binyellow.github.io.git`
+
+### SSH设置和免密
+1. 设置Git的user name和email：(如果是第一次的话)
 ```js
 $ git config --global user.name "yourname"  
 $ git config --global user.email "yuor mail"
 ```
 
-2.  生成密钥
+2. 生成密钥
 
 `$ ssh-keygen -t rsa -C "humingx@yeah.net"` 
 按回车，最后得到了两个文件：id_rsa和id_rsa.pub。
@@ -29,9 +33,11 @@ $ git config --global user.email "yuor mail"
 4. 修改你本地的ssh remote url. 不用https协议，改用git 协议
 可以用git remote -v 查看你当前的remote url
 
+```js
 $ Git remote -v  
 origin https://github.com/someaccount/someproject.git (fetch)  
-origin https://github.com/someaccount/someproject.git (push)  
+origin https://github.com/someaccount/someproject.git (push)
+```  
 可以看到是使用https协议进行访问的。
 你可以使用浏览器登陆你的github，在上面可以看到你的ssh协议相应的url。类似如下：
 
