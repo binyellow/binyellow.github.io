@@ -88,7 +88,8 @@
 <meta property="og:description" content="HTTPS 啥都别说先整张图 SSL加密层: 把http的内容加密后送到下层的TCP，从接收方看，这一层负责将TCP送来的数据解密还原成http的内容 数字证书：一种文件的名称，好比一个机构或人的签名，能够证明这个机构或人的真实性。其中包含的信息，用于实现上述功能 加密: 将明文通过加密变成密文，如果第三方无法解密的话，就算他获得密文也无能为力 对称加密：加密和解密使用相同的密钥 非对称密码算法:">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2017/04/05/img/network/https.png">
-<meta property="og:updated_time" content="2018-04-02T14:18:07.755Z">
+<meta property="og:image" content="http://yoursite.com/2017/04/05/img/network/OSI.jpg">
+<meta property="og:updated_time" content="2018-04-02T14:26:04.976Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="想翻墙、无限流量，是不是应该先看看这些">
 <meta name="twitter:description" content="HTTPS 啥都别说先整张图 SSL加密层: 把http的内容加密后送到下层的TCP，从接收方看，这一层负责将TCP送来的数据解密还原成http的内容 数字证书：一种文件的名称，好比一个机构或人的签名，能够证明这个机构或人的真实性。其中包含的信息，用于实现上述功能 加密: 将明文通过加密变成密文，如果第三方无法解密的话，就算他获得密文也无能为力 对称加密：加密和解密使用相同的密钥 非对称密码算法:">
@@ -405,7 +406,8 @@
 <li>散列算法：公开的算法,MD5</li>
 </ul>
 </li>
-<li><strong>认证</strong>是指通信双方为了确认对方是值得信任的消息发送或接受方,相当于一个鉴定中心颁发的证书<h4 id="什么是VPN"><a href="#什么是VPN" class="headerlink" title="什么是VPN"></a>什么是VPN</h4></li>
+<li><strong>认证</strong>是指通信双方为了确认对方是值得信任的消息发送或接受方,相当于一个鉴定中心颁发的证书<a id="more"></a>
+<h4 id="什么是VPN"><a href="#什么是VPN" class="headerlink" title="什么是VPN"></a>什么是VPN</h4></li>
 </ul>
 </li>
 <li>vpn–虚拟专用网络，它的功能是：在公用网络上建立专用网络，进行加密通讯。你和vpn之间的通信是否加密，取决于你连接vpn的方式或者协议<h4 id="SS-SSR-SSL-TSL"><a href="#SS-SSR-SSL-TSL" class="headerlink" title="SS-SSR-SSL-TSL"></a>SS-SSR-SSL-TSL</h4></li>
@@ -421,6 +423,16 @@
 <li>混淆：为了伪装，使原本的上网数据伪装成其他的数据，访问HTTPS网站的时候会用SSL证书把网站加密起来<h4 id="Nginx正向-反向代理"><a href="#Nginx正向-反向代理" class="headerlink" title="Nginx正向-反向代理"></a>Nginx正向-反向代理</h4></li>
 <li>正向代理：当我们要访问google时,用代理服务器访问,那么要访问的服务器是明确的,但是服务器不知道是哪个客户端</li>
 <li>反向代理：像淘宝这种流量巨大的网站,当某台服务器负载扛不住的时候,Nginx接受到客户端的请求时,会根据一定的规则来分发给不同的服务器,此时客户端是明确的,服务器却不明确了</li>
+</ul>
+<h4 id="OSI"><a href="#OSI" class="headerlink" title="OSI"></a>OSI</h4><p><img src="../img/network/OSI.jpg" alt=""></p>
+<ul>
+<li>应用层：邮件、文件传输、HTTP超文本传输协议等,为用户的应用程序（例如电子邮件、文件传输和终端仿真）提供网络服务</li>
+<li>表示层：确保一个系统的应用层所发送的信息可以被另一个系统的应用层读取</li>
+<li>会话层：通过传输层（端口号：传输端口与接收端口）建立数据传输的通路，主要在你的系统之间发起会话或者接受会话请求</li>
+<li>传输层：定义了一些传输数据的协议和端口号（WWW端口80等）</li>
+<li>网络层：在位于不同地理位置的网络中的两个主机系统之间提供连接和路径选择</li>
+<li>数据链路层：如何让格式化数据以进行传输,还有错误检查和纠正</li>
+<li>物理层：定义物理设备标准，如网线的接口类型、光纤的接口类型、各种传输介质的传输速率等</li>
 </ul>
 
       
@@ -666,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTPS"><span class="nav-number">1.</span> <span class="nav-text">HTTPS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是VPN"><span class="nav-number">2.</span> <span class="nav-text">什么是VPN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SS-SSR-SSL-TSL"><span class="nav-number">3.</span> <span class="nav-text">SS-SSR-SSL-TSL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PAC-直连模式-全局模式"><span class="nav-number">4.</span> <span class="nav-text">PAC-直连模式-全局模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混淆"><span class="nav-number">5.</span> <span class="nav-text">混淆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx正向-反向代理"><span class="nav-number">6.</span> <span class="nav-text">Nginx正向-反向代理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTPS"><span class="nav-number">1.</span> <span class="nav-text">HTTPS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是VPN"><span class="nav-number">2.</span> <span class="nav-text">什么是VPN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SS-SSR-SSL-TSL"><span class="nav-number">3.</span> <span class="nav-text">SS-SSR-SSL-TSL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PAC-直连模式-全局模式"><span class="nav-number">4.</span> <span class="nav-text">PAC-直连模式-全局模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混淆"><span class="nav-number">5.</span> <span class="nav-text">混淆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx正向-反向代理"><span class="nav-number">6.</span> <span class="nav-text">Nginx正向-反向代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OSI"><span class="nav-number">7.</span> <span class="nav-text">OSI</span></a></li></ol></div>
             
 
           </div>
