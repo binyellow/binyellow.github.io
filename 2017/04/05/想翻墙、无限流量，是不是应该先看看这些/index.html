@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2017/04/05/img/network/https.png">
 <meta property="og:image" content="http://yoursite.com/2017/04/05/img/network/OSI.jpg">
-<meta property="og:updated_time" content="2018-04-02T14:26:04.976Z">
+<meta property="og:updated_time" content="2018-04-02T14:31:54.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="想翻墙、无限流量，是不是应该先看看这些">
 <meta name="twitter:description" content="HTTPS 啥都别说先整张图 SSL加密层: 把http的内容加密后送到下层的TCP，从接收方看，这一层负责将TCP送来的数据解密还原成http的内容 数字证书：一种文件的名称，好比一个机构或人的签名，能够证明这个机构或人的真实性。其中包含的信息，用于实现上述功能 加密: 将明文通过加密变成密文，如果第三方无法解密的话，就算他获得密文也无能为力 对称加密：加密和解密使用相同的密钥 非对称密码算法:">
@@ -407,9 +407,29 @@
 </ul>
 </li>
 <li><strong>认证</strong>是指通信双方为了确认对方是值得信任的消息发送或接受方,相当于一个鉴定中心颁发的证书<a id="more"></a>
-<h4 id="什么是VPN"><a href="#什么是VPN" class="headerlink" title="什么是VPN"></a>什么是VPN</h4></li>
+<h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3><h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4></li>
 </ul>
 </li>
+</ul>
+<ol>
+<li>参数解释<ul>
+<li>seq: 标识字节流</li>
+<li>ack: ack=seq+1,确认序号</li>
+<li>ACK：确认序号有效</li>
+<li>SYN：发起一个新连接</li>
+<li>FIN：释放一个连接</li>
+</ul>
+</li>
+<li>为什么要第三次确认？<ul>
+<li>因为怕出现已失效的连接请求报文段<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4></li>
+</ul>
+</li>
+<li>为什么要四次挥手？<ul>
+<li>当服务器收到FIN时,很可能还没传完数据,所以先说我已经收到FIN指令了,等发送完再发FIN</li>
+</ul>
+</li>
+</ol>
+<h4 id="什么是VPN"><a href="#什么是VPN" class="headerlink" title="什么是VPN"></a>什么是VPN</h4><ul>
 <li>vpn–虚拟专用网络，它的功能是：在公用网络上建立专用网络，进行加密通讯。你和vpn之间的通信是否加密，取决于你连接vpn的方式或者协议<h4 id="SS-SSR-SSL-TSL"><a href="#SS-SSR-SSL-TSL" class="headerlink" title="SS-SSR-SSL-TSL"></a>SS-SSR-SSL-TSL</h4></li>
 <li>shadowsocks(影梭): ss和ssr它的原理都是一样的，就是socks5代理,socks5代理是把你的网络数据请求通过一条连接你和代理服务器之间的通道，由服务器转发到目的地，这个过程中你是没有通过一条专用通道的，只是数据包的发出，然后被代理服务器收到</li>
 <li>ssr: 支持协议转换、协议混淆、多重代理。SS开源，SSR闭源</li>
@@ -678,7 +698,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTPS"><span class="nav-number">1.</span> <span class="nav-text">HTTPS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是VPN"><span class="nav-number">2.</span> <span class="nav-text">什么是VPN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SS-SSR-SSL-TSL"><span class="nav-number">3.</span> <span class="nav-text">SS-SSR-SSL-TSL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PAC-直连模式-全局模式"><span class="nav-number">4.</span> <span class="nav-text">PAC-直连模式-全局模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混淆"><span class="nav-number">5.</span> <span class="nav-text">混淆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx正向-反向代理"><span class="nav-number">6.</span> <span class="nav-text">Nginx正向-反向代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OSI"><span class="nav-number">7.</span> <span class="nav-text">OSI</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTPS"><span class="nav-number">1.</span> <span class="nav-text">HTTPS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP"><span class="nav-number"></span> <span class="nav-text">TCP/IP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是VPN"><span class="nav-number">3.</span> <span class="nav-text">什么是VPN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SS-SSR-SSL-TSL"><span class="nav-number">4.</span> <span class="nav-text">SS-SSR-SSL-TSL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PAC-直连模式-全局模式"><span class="nav-number">5.</span> <span class="nav-text">PAC-直连模式-全局模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混淆"><span class="nav-number">6.</span> <span class="nav-text">混淆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx正向-反向代理"><span class="nav-number">7.</span> <span class="nav-text">Nginx正向-反向代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OSI"><span class="nav-number">8.</span> <span class="nav-text">OSI</span></a></li></ol></div>
             
 
           </div>
