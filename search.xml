@@ -12,17 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Markdown语法，看这里就够了]]></title>
-    <url>%2F2017%2F06%2F20%2FMarkdown%E8%AF%AD%E6%B3%95%EF%BC%8C%E7%9C%8B%E8%BF%99%E9%87%8C%E5%B0%B1%E5%A4%9F%E4%BA%86%2F</url>
-    <content type="text"><![CDATA[标题：# —######分别为6级标题 区块引用blockquotes或者&gt; 列表 无序列表：使用*、+或是-作为列表标记 有序列表：使用数字+英文句点 代码区块：用pre 和 code 标签 | 多行代码用``` `js包起来 分隔线：用三个以上的星号、减号、底线来建立一个分隔线 链接：链接内容定义的形式为：[name](link) 图片：![]() 强调：-- – 斜体： 删除线：~~ ~~ 表格：使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行 列表前面加v,X:[X] 注释&lt;!–content–&gt; 链接补充：当链接到#Title时,#后要全部小写]]></content>
-      <categories>
-        <category>markdown</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Flex-Grid]]></title>
     <url>%2F2017%2F06%2F02%2FFlex-Grid%2F</url>
     <content type="text"><![CDATA[Flex GridFlex 采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。 容器默认存在两根轴 ：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。 容器的属性:[display:flex] flex-direction:主轴的方向(flex-direction: row | row-reverse | column | column-reverse;) flex-wrap:如果一条轴线排不下，如何换行(flex-wrap: nowrap(不换行) | wrap (换行第一行在上方)| wrap-reverse;) flex-flow:flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap justify-content:项目在主轴上的对齐方式(justify-content: flex-start | flex-end | center | space-between | space-around;) flex-start（默认值）：左对齐 flex-end：右对齐 center： 居中 space-between：两端对齐，项目之间的间隔都相等。 space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。 align-items:项目在交叉轴上如何对齐 flex-start：交叉轴的起点对齐。 flex-end：交叉轴的终点对齐。 center：交叉轴的中点对齐。 baseline: 项目的第一行文字的基线对齐。 stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。 align-content:定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用 flex-start：与交叉轴的起点对齐。 flex-end：与交叉轴的终点对齐。 center：与交叉轴的中点对齐。 space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。 space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。 stretch（默认值）：轴线占满整个交叉轴。 注意：父容器要给高度，align-content是在flex-wrap使得排成2行以上才生效 align-items和align-content的不同：items是每个元素都居中，content是行相对居中 项目的属性 order:定义项目的排列顺序。数值越小，排列越靠前，默认为0。 flex-grow:定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。 flex-shrink:定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。为0则不会缩小 flex-basis:定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。 flex:属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。 该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。 align-self:属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。 .item {align-self: auto | flex-start | flex-end | center | baseline | stretch;} 项目属性和容器属性分别作用在对应的元素上 设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效 更多 Grid网格布局父元素 display:grid; grid-template-columns:100px 100px 100px; grid-template-rows:100px 100px 100px; 子元素 grid-column: 1/4从第1到第4格结束：3格 grid-row: 2/5]]></content>
@@ -32,6 +21,28 @@
       <tags>
         <tag>flex</tag>
         <tag>grid</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[正则小记]]></title>
+    <url>%2F2017%2F04%2F02%2F%E6%AD%A3%E5%88%99%E5%B0%8F%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[正则表达式是匹配模式，要么匹配字符，要么匹配位置const reg = /[^abc][def]g{2,5}\da?/g(修饰符) 修饰符:i,g,m i表示的含义是忽略大小写进行匹配 g表示全局匹配,即匹配到第一个之后不停止继续匹配 m表示多行匹配即,遇到换行后不停止匹配继续直到被匹配字符串结束方法 对于正则表达式 regObj.test(str) ：测试某个字符串是否与正则匹配，匹配就返回true regObj.exec regObj.compile 对于字符串 str.search(reg) : 查找第一次匹配的子字符串的位置，如果找到就返回一个number类型的index值，否则返回-1 str.match(reg) : 返回匹配的字符串 str.replace() str.split() 正题横向模糊搜索 var regex = /ab{2,5}c/g : g，它是正则的一个修饰符。表示全局匹配，即在目标字符串中按顺序找到满足匹配模式的所有子串纵向模糊搜索 var regex = /a[bcd]e/g字符组：需要强调的是，虽叫字符组（字符类），但只是其中一个字符。例如[abc]，表示匹配一个字符，它可以是“a”、“b”、“c”之一。 范围表示法 : 如[123456abcdefGHIJKLM]，可以写成[1-6a-fG-M] 排除字符组 : [^abc]表示是一个除”a”、”b”、”c”之外的任意一个字符,但是在括号外表示开始位置,$表示结束 常见简写： \d 就是[0-9]。表示是一位数字。记忆方式：其英文是digit（数字） \D 就是[^0-9]。表示除数字外的任意字符 \w 就是[0-9a-zA-Z_]。表示数字、大小写字母和下划线。记忆方式：w是word的简写，也称单词字符 \W 就是[^0-9a-zA-Z_]。非单词字符 \s 就是[ \t\v\n\r\f]。表示空白符，包括空格、水平制表符、垂直制表符、换行符、回车符、换页符。记忆方式：s是space character的首字母 \S 就是[^ \t\v\n\r\f]。 非空白符 . 就是[^\n\r\u2028\u2029]。通配符，表示几乎任意字符。换行符、回车符、行分隔符和段分隔符除外。记忆方式：想想省略号…中的每个点，都可以理解成占位符，表示任何类似的东西量词 简写形式 {m,} 表示至少出现m次 {m} 等价于{m,m}，表示出现m次 ? 等价于{0,1}，表示出现或者不出现。记忆方式：问号的意思表示，有吗？ + 等价于{1,}，表示出现至少一次。记忆方式：加号是追加的意思，得先有一个，然后才考虑追加 * 等价于{0,}，表示出现任意次，有可能不出现。记忆方式：看看天上的星星，可能一颗没有，可能零散有几颗，可能数也数不过来 贪婪匹配和惰性匹配 其是贪婪的 123var regex = /\d&#123;2,5&#125;/g;var string = "123 1234 12345 123456";console.log( string.match(regex) ); // ["123", "1234", "12345", "12345"] /\d{2,5}?/表示，虽然2到5次都行，当2个就够的时候，就不在往下尝试了 多选分支 多选分支可以支持多个子模式任选其一- 123var regex = /good|nice/g;var string = "good idea, nice try.";console.log( string.match(regex) ); // ["good", "nice"] 分支结构也是惰性的，即当前面的匹配上了，后面的就不再尝试了]]></content>
+      <categories>
+        <category>regex</category>
+      </categories>
+      <tags>
+        <tag>regex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown语法，看这里就够了]]></title>
+    <url>%2F2017%2F02%2F20%2FMarkdown%E8%AF%AD%E6%B3%95%EF%BC%8C%E7%9C%8B%E8%BF%99%E9%87%8C%E5%B0%B1%E5%A4%9F%E4%BA%86%2F</url>
+    <content type="text"><![CDATA[标题：# —######分别为6级标题 区块引用blockquotes或者&gt; 列表 无序列表：使用*、+或是-作为列表标记 有序列表：使用数字+英文句点 代码区块：用pre 和 code 标签 | 多行代码用``` `js包起来 分隔线：用三个以上的星号、减号、底线来建立一个分隔线 链接：链接内容定义的形式为：[name](link) 图片：![]() 强调：-- – 斜体： 删除线：~~ ~~ 表格：使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行 列表前面加v,X:[X] 注释&lt;!–content–&gt; 链接补充：当链接到#Title时,#后要全部小写]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
