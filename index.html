@@ -689,7 +689,41 @@
       
         
           
-            
+            <h4 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h4><ul>
+<li>啥都别说先整张图<br><img src="../img/network/https.png" alt=""></li>
+<li><strong>SSL加密层</strong>: 把http的内容加密后送到下层的TCP，从接收方看，这一层负责将TCP送来的数据解密还原成http的内容<ul>
+<li><strong>数字证书</strong>：一种文件的名称，好比一个机构或人的签名，能够证明这个机构或人的真实性。其中包含的信息，用于实现上述功能</li>
+<li><strong>加密</strong>: 将明文通过加密变成密文，如果第三方无法解密的话，就算他获得密文也无能为力<ul>
+<li>对称加密：加密和解密使用相同的密钥</li>
+<li>非对称密码算法: <ul>
+<li>服务器把自己的公钥登录至数字证书认证机构</li>
+<li>证书机构把自己的私有密钥向服务器的公开密码部署数字签名并颁发公钥证书</li>
+<li>客户端拿到服务器的公钥证书后，使用数字证书认证机构的公开密钥，向数字证书认证机构验证公钥证书上的数字签名。以确认服务器公钥的真实性</li>
+<li>使用服务器的公开密钥对报文加密后发送</li>
+<li>服务器用私有密钥对报文解密</li>
+</ul>
+</li>
+<li>散列算法：公开的算法,MD5</li>
+</ul>
+</li>
+<li><strong>认证</strong>是指通信双方为了确认对方是值得信任的消息发送或接受方,相当于一个鉴定中心颁发的证书<h4 id="什么是VPN"><a href="#什么是VPN" class="headerlink" title="什么是VPN"></a>什么是VPN</h4></li>
+</ul>
+</li>
+<li>vpn–虚拟专用网络，它的功能是：在公用网络上建立专用网络，进行加密通讯。你和vpn之间的通信是否加密，取决于你连接vpn的方式或者协议<h4 id="SS-SSR-SSL-TSL"><a href="#SS-SSR-SSL-TSL" class="headerlink" title="SS-SSR-SSL-TSL"></a>SS-SSR-SSL-TSL</h4></li>
+<li>shadowsocks(影梭): ss和ssr它的原理都是一样的，就是socks5代理,socks5代理是把你的网络数据请求通过一条连接你和代理服务器之间的通道，由服务器转发到目的地，这个过程中你是没有通过一条专用通道的，只是数据包的发出，然后被代理服务器收到</li>
+<li>ssr: 支持协议转换、协议混淆、多重代理。SS开源，SSR闭源</li>
+<li>SSL(Secure Socket Layer): SSL是VPN的一种实现方式</li>
+<li>TSL相当于是SSL的升级版</li>
+<li><a href="https://blog.csdn.net/ShellDawn/article/details/78345240" target="_blank" rel="noopener">更多</a><h4 id="PAC-直连模式-全局模式"><a href="#PAC-直连模式-全局模式" class="headerlink" title="PAC-直连模式-全局模式"></a>PAC-直连模式-全局模式</h4></li>
+<li>PAC: 国内地址不走代理，国外走代理</li>
+<li>直连模式: 流量不走代理</li>
+<li>全局：全部走代理<h4 id="混淆"><a href="#混淆" class="headerlink" title="混淆"></a>混淆</h4></li>
+<li>协议插件: 定义加密前的协议，通常用于长度混淆及增强安全性和隐蔽性</li>
+<li>混淆：为了伪装，使原本的上网数据伪装成其他的数据，访问HTTPS网站的时候会用SSL证书把网站加密起来<h4 id="Nginx正向-反向代理"><a href="#Nginx正向-反向代理" class="headerlink" title="Nginx正向-反向代理"></a>Nginx正向-反向代理</h4></li>
+<li>正向代理：当我们要访问google时,用代理服务器访问,那么要访问的服务器是明确的,但是服务器不知道是哪个客户端</li>
+<li>反向代理：像淘宝这种流量巨大的网站,当某台服务器负载扛不住的时候,Nginx接受到客户端的请求时,会根据一定的规则来分发给不同的服务器,此时客户端是明确的,服务器却不明确了</li>
+</ul>
+
           
         
       
@@ -1678,7 +1712,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1689,7 +1723,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
