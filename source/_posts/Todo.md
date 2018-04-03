@@ -6,5 +6,7 @@ tags:
 categories: Todo
 ---
 
-![](/img/network/https.png)
-eee
+1. Webpack
+2. Nginx
+3. 优化
+4. Redux-soga
