@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="YellowBin">
 <meta property="og:description" content="正则表达式是匹配模式，要么匹配字符，要么匹配位置const reg = /[^abc][def]g{2,5}\da?/g(修饰符) 修饰符:i,g,m i表示的含义是忽略大小写进行匹配 g表示全局匹配,即匹配到第一个之后不停止继续匹配 m表示多行匹配即,遇到换行后不停止匹配继续直到被匹配字符串结束">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-02T12:48:13.894Z">
+<meta property="og:updated_time" content="2018-04-03T00:58:17.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则小记">
 <meta name="twitter:description" content="正则表达式是匹配模式，要么匹配字符，要么匹配位置const reg = /[^abc][def]g{2,5}\da?/g(修饰符) 修饰符:i,g,m i表示的含义是忽略大小写进行匹配 g表示全局匹配,即匹配到第一个之后不停止继续匹配 m表示多行匹配即,遇到换行后不停止匹配继续直到被匹配字符串结束">
@@ -408,11 +408,13 @@
 </ul>
 </li>
 </ol>
-<h2 id="正题"><a href="#正题" class="headerlink" title="正题"></a><a href="https://zhuanlan.zhihu.com/p/27338649?utm_source=com.tencent.tim&amp;utm_medium=social" target="_blank" rel="noopener">正题</a></h2><h4 id="横向模糊搜索"><a href="#横向模糊搜索" class="headerlink" title="横向模糊搜索"></a>横向模糊搜索</h4><ul>
-<li><code>var regex = /ab{2,5}c/g</code> : g，它是正则的一个修饰符。表示全局匹配，即在目标字符串中按顺序找到满足匹配模式的所有子串<h4 id="纵向模糊搜索"><a href="#纵向模糊搜索" class="headerlink" title="纵向模糊搜索"></a>纵向模糊搜索</h4></li>
-<li><code>var regex = /a[bcd]e/g</code><h4 id="字符组：需要强调的是，虽叫字符组（字符类），但只是其中一个字符。例如-abc-，表示匹配一个字符，它可以是“a”、“b”、“c”之一。"><a href="#字符组：需要强调的是，虽叫字符组（字符类），但只是其中一个字符。例如-abc-，表示匹配一个字符，它可以是“a”、“b”、“c”之一。" class="headerlink" title="字符组：需要强调的是，虽叫字符组（字符类），但只是其中一个字符。例如[abc]，表示匹配一个字符，它可以是“a”、“b”、“c”之一。"></a>字符组：需要强调的是，虽叫字符组（字符类），但只是其中一个字符。例如[abc]，表示匹配一个字符，它可以是“a”、“b”、“c”之一。</h4></li>
+<h3 id="正题"><a href="#正题" class="headerlink" title="正题"></a><a href="https://zhuanlan.zhihu.com/p/27338649?utm_source=com.tencent.tim&amp;utm_medium=social" target="_blank" rel="noopener">正题</a></h3><h4 id="横向模糊搜索"><a href="#横向模糊搜索" class="headerlink" title="横向模糊搜索"></a>横向模糊搜索</h4><ul>
+<li><code>var regex = /ab{2,5}c/g</code> : g，它是正则的一个修饰符。表示全局匹配，即在目标字符串中按顺序找到满足匹配模式的所有子串</li>
 </ul>
-<ol>
+<h4 id="纵向模糊搜索"><a href="#纵向模糊搜索" class="headerlink" title="纵向模糊搜索"></a>纵向模糊搜索</h4><ul>
+<li><code>var regex = /a[bcd]e/g</code></li>
+</ul>
+<h4 id="字符组：需要强调的是，虽叫字符组（字符类），但只是其中一个字符。例如-abc-，表示匹配一个字符，它可以是“a”、“b”、“c”之一。"><a href="#字符组：需要强调的是，虽叫字符组（字符类），但只是其中一个字符。例如-abc-，表示匹配一个字符，它可以是“a”、“b”、“c”之一。" class="headerlink" title="字符组：需要强调的是，虽叫字符组（字符类），但只是其中一个字符。例如[abc]，表示匹配一个字符，它可以是“a”、“b”、“c”之一。"></a>字符组：需要强调的是，虽叫字符组（字符类），但只是其中一个字符。例如[abc]，表示匹配一个字符，它可以是“a”、“b”、“c”之一。</h4><ol>
 <li>范围表示法 : 如[123456abcdefGHIJKLM]，可以写成[1-6a-fG-M]</li>
 <li>排除字符组 : [^abc]表示是一个除”a”、”b”、”c”之外的任意一个字符,但是在括号外表示开始位置,$表示结束</li>
 <li>常见简写：<ul>
@@ -422,9 +424,11 @@
 <li>\W 就是[^0-9a-zA-Z_]。非单词字符</li>
 <li>\s 就是[ \t\v\n\r\f]。表示空白符，包括空格、水平制表符、垂直制表符、换行符、回车符、换页符。记忆方式：s是space character的首字母</li>
 <li>\S 就是[^ \t\v\n\r\f]。 非空白符</li>
-<li>. 就是[^\n\r\u2028\u2029]。通配符，表示几乎任意字符。换行符、回车符、行分隔符和段分隔符除外。记忆方式：想想省略号…中的每个点，都可以理解成占位符，表示任何类似的东西<h4 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h4></li>
+<li>. 就是[^\n\r\u2028\u2029]。通配符，表示几乎任意字符。换行符、回车符、行分隔符和段分隔符除外。记忆方式：想想省略号…中的每个点，都可以理解成占位符，表示任何类似的东西</li>
 </ul>
 </li>
+</ol>
+<h4 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h4><ol>
 <li>简写形式<ul>
 <li>{m,} 表示至少出现m次</li>
 <li>{m} 等价于{m,m}，表示出现m次</li>
@@ -694,7 +698,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式是匹配模式，要么匹配字符，要么匹配位置"><span class="nav-number">1.</span> <span class="nav-text">正则表达式是匹配模式，要么匹配字符，要么匹配位置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修饰符-i-g-m"><span class="nav-number">1.1.</span> <span class="nav-text">修饰符:i,g,m</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">1.2.</span> <span class="nav-text">方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正题"><span class="nav-number"></span> <span class="nav-text">正题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#横向模糊搜索"><span class="nav-number">0.1.</span> <span class="nav-text">横向模糊搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#纵向模糊搜索"><span class="nav-number">0.2.</span> <span class="nav-text">纵向模糊搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符组：需要强调的是，虽叫字符组（字符类），但只是其中一个字符。例如-abc-，表示匹配一个字符，它可以是“a”、“b”、“c”之一。"><span class="nav-number">0.3.</span> <span class="nav-text">字符组：需要强调的是，虽叫字符组（字符类），但只是其中一个字符。例如[abc]，表示匹配一个字符，它可以是“a”、“b”、“c”之一。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#量词"><span class="nav-number">0.4.</span> <span class="nav-text">量词</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式是匹配模式，要么匹配字符，要么匹配位置"><span class="nav-number">1.</span> <span class="nav-text">正则表达式是匹配模式，要么匹配字符，要么匹配位置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修饰符-i-g-m"><span class="nav-number">1.1.</span> <span class="nav-text">修饰符:i,g,m</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">1.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正题"><span class="nav-number">2.</span> <span class="nav-text">正题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#横向模糊搜索"><span class="nav-number">2.1.</span> <span class="nav-text">横向模糊搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#纵向模糊搜索"><span class="nav-number">2.2.</span> <span class="nav-text">纵向模糊搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符组：需要强调的是，虽叫字符组（字符类），但只是其中一个字符。例如-abc-，表示匹配一个字符，它可以是“a”、“b”、“c”之一。"><span class="nav-number">2.3.</span> <span class="nav-text">字符组：需要强调的是，虽叫字符组（字符类），但只是其中一个字符。例如[abc]，表示匹配一个字符，它可以是“a”、“b”、“c”之一。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#量词"><span class="nav-number">2.4.</span> <span class="nav-text">量词</span></a></li></ol></li></ol></div>
             
 
           </div>
