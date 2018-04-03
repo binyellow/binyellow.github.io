@@ -91,7 +91,7 @@
   <entry>
     <title><![CDATA[垂直居中，你知道多少]]></title>
     <url>%2F2016%2F11%2F13%2F%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%EF%BC%8C%E4%BD%A0%E7%9F%A5%E9%81%93%E5%A4%9A%E5%B0%91%2F</url>
-    <content type="text"><![CDATA[常见垂直居中方式 相对定位 12345678910.content &#123; position: relative; top: 50%; //垂直居中 margin:0 auto;//水平居中 margin-top: -100px;//减去自身的高度一半 background-color: #6699FF; width: 200px; height: 200px;&#125; 绝对定位: 12345678910content&#123; width: 300px; height: 300px; background: orange; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);//CSS3新特性 不需要知道自身宽高&#125; Flex布局 父容器：12345wrapper&#123; justify-content: center;//项目在主轴上的对齐方式（X） align-items: center; //项目在交叉轴上如何对齐 display: -webkit-flex;&#125;]]></content>
+    <content type="text"><![CDATA[常见垂直居中方式相对定位12345678910.content &#123; position: relative; top: 50%; //垂直居中 margin:0 auto;//水平居中 margin-top: -100px;//减去自身的高度一半 background-color: #6699FF; width: 200px; height: 200px;&#125; 绝对定位:12345678910content&#123; width: 300px; height: 300px; background: orange; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);//CSS3新特性 不需要知道自身宽高&#125; Flex布局父容器：12345wrapper&#123; justify-content: center;//项目在主轴上的对齐方式（X） align-items: center; //项目在交叉轴上如何对齐 display: -webkit-flex;&#125; fixed1234567div &#123; position: fixed; top: 0; left: 0; right: 0; bottom: 0;&#125; 补充点定位absolute 绝对定位脱离文档流，相对于父级不为static的元素定位 文档流就是按照从左到右，从上到下的顺序排列的页面结构 relative 想对定位是相对于自身原来的位置定位，原来的位置还是占着文档流的空间 float 脱离文档流,clear的含义是当前元素的某个位置没有浮动元素]]></content>
       <categories>
         <category>CSS</category>
       </categories>
