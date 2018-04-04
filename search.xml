@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[node-debug]]></title>
-    <url>%2F2018%2F04%2F04%2Fnode-debug%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[Todo]]></title>
     <url>%2F2018%2F04%2F03%2FTodo%2F</url>
     <content type="text"><![CDATA[Webpack Nginx 优化 Redux-soga ES-Lint]]></content>
@@ -25,6 +20,17 @@
       </categories>
       <tags>
         <tag>HTTP</tag>
+        <tag>Node</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[node-debug]]></title>
+    <url>%2F2018%2F03%2F14%2Fnode-debug%2F</url>
+    <content type="text"><![CDATA[node热更新插件nodemon 调试 node –inspect node.js chrome 打开调试助手 步骤和js差不多]]></content>
+      <categories>
+        <category>Node</category>
+      </categories>
+      <tags>
         <tag>Node</tag>
       </tags>
   </entry>
