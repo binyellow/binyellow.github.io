@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="thunk为了让Reducer在异步操作后自动执行，于是出现了thunkthunk加在Reducer还是action或者view中呢？ 1是纯函数不能进行读写操作 2是存放数据的载体，只能被Reducer来操作 view和state一一对应，也不合适 所以只能对dispatch函数进行改造封装怎么使用？  12345const store = createStore(  reducer,  ini">
+<meta name="description" content="thunk为了让Reducer在异步操作后自动执行，于是出现了thunkthunk加在Reducer还是action或者view中呢？ 1是纯函数不能进行读写操作 2是存放数据的载体，只能被Reducer来操作 view和state一一对应，也不合适 所以只能对dispatch函数进行改造封装">
 <meta name="keywords" content="Redux,Redux-thunk,Redux-saga">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redux-thunk-saga">
 <meta property="og:url" content="http://yoursite.com/2017/12/08/redux-thunk-saga/index.html">
 <meta property="og:site_name" content="YellowBin">
-<meta property="og:description" content="thunk为了让Reducer在异步操作后自动执行，于是出现了thunkthunk加在Reducer还是action或者view中呢？ 1是纯函数不能进行读写操作 2是存放数据的载体，只能被Reducer来操作 view和state一一对应，也不合适 所以只能对dispatch函数进行改造封装怎么使用？  12345const store = createStore(  reducer,  ini">
+<meta property="og:description" content="thunk为了让Reducer在异步操作后自动执行，于是出现了thunkthunk加在Reducer还是action或者view中呢？ 1是纯函数不能进行读写操作 2是存放数据的载体，只能被Reducer来操作 view和state一一对应，也不合适 所以只能对dispatch函数进行改造封装">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-04T03:01:55.297Z">
+<meta property="og:updated_time" content="2018-04-04T03:07:35.694Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redux-thunk-saga">
-<meta name="twitter:description" content="thunk为了让Reducer在异步操作后自动执行，于是出现了thunkthunk加在Reducer还是action或者view中呢？ 1是纯函数不能进行读写操作 2是存放数据的载体，只能被Reducer来操作 view和state一一对应，也不合适 所以只能对dispatch函数进行改造封装怎么使用？  12345const store = createStore(  reducer,  ini">
+<meta name="twitter:description" content="thunk为了让Reducer在异步操作后自动执行，于是出现了thunkthunk加在Reducer还是action或者view中呢？ 1是纯函数不能进行读写操作 2是存放数据的载体，只能被Reducer来操作 view和state一一对应，也不合适 所以只能对dispatch函数进行改造封装">
 
 
 
@@ -390,7 +390,8 @@
 <li>1是纯函数不能进行读写操作</li>
 <li>2是存放数据的载体，只能被Reducer来操作</li>
 <li>view和state一一对应，也不合适</li>
-<li>所以只能对dispatch函数进行改造封装<h4 id="怎么使用？"><a href="#怎么使用？" class="headerlink" title="怎么使用？"></a>怎么使用？</h4></li>
+<li>所以只能对dispatch函数进行改造封装<a id="more"></a>
+<h4 id="怎么使用？"><a href="#怎么使用？" class="headerlink" title="怎么使用？"></a>怎么使用？</h4></li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> store = createStore(</span><br><span class="line">  reducer,</span><br><span class="line">  initial_state,</span><br><span class="line">  applyMiddleware(thunk, promise, logger)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <h4 id="thunk使得dispatch一个函数"><a href="#thunk使得dispatch一个函数" class="headerlink" title="thunk使得dispatch一个函数"></a>thunk使得dispatch一个函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(dispatch,getState)=&gt;&#123;</span><br><span class="line">    dispatch(操作开始);</span><br><span class="line">    <span class="keyword">return</span> axios.get(<span class="string">'/'</span>,&#123;params&#125;).then(<span class="function"><span class="params">data</span>=&gt;</span>&#123;</span><br><span class="line">        dispatch(recieve(data)) <span class="comment">//异步请求完成后再发起请求完成的action</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -558,7 +559,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
