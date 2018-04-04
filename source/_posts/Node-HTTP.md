@@ -14,7 +14,7 @@ categories: 计算机网络
         - data:当数据请求时,返回接收的数据chunk
         - end:数据请求完
         - close:请求结束
-    3. req属性:
+    3. req属性:<!--more-->
         - method:请求方法
         - headers:请求头
         - url:请求路径
