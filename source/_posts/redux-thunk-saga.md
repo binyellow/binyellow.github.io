@@ -14,6 +14,7 @@ categories: Redux
 - 2是存放数据的载体，只能被Reducer来操作
 - view和state一一对应，也不合适
 - 所以只能对dispatch函数进行改造封装
+<!--more-->
 #### 怎么使用？
 
 ```js
