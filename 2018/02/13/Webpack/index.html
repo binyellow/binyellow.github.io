@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="YellowBin">
 <meta property="og:description" content="注意插件和loader版本问题,要适配webpack4.0 Webpack自动刷新和模块热替换自动刷新 iframe模式 inline模式模块热替换（–hot): 是指不需要完全刷新就能更新各个模块 要使用模块热替换需指定publicPath: 因为存在path的情况下,webpack-dev-server生成的包并没有放在你的真实目录中,而是放在了内存中 publicPath: 为项目中的所有资">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-14T05:39:55.622Z">
+<meta property="og:updated_time" content="2018-04-14T12:41:32.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack">
 <meta name="twitter:description" content="注意插件和loader版本问题,要适配webpack4.0 Webpack自动刷新和模块热替换自动刷新 iframe模式 inline模式模块热替换（–hot): 是指不需要完全刷新就能更新各个模块 要使用模块热替换需指定publicPath: 因为存在path的情况下,webpack-dev-server生成的包并没有放在你的真实目录中,而是放在了内存中 publicPath: 为项目中的所有资">
@@ -391,10 +391,10 @@
 <li>iframe模式</li>
 <li>inline模式<h4 id="模块热替换（–hot-是指不需要完全刷新就能更新各个模块"><a href="#模块热替换（–hot-是指不需要完全刷新就能更新各个模块" class="headerlink" title="模块热替换（–hot): 是指不需要完全刷新就能更新各个模块"></a>模块热替换（–hot): 是指不需要完全刷新就能更新各个模块</h4></li>
 <li>要使用模块热替换需指定publicPath: 因为存在path的情况下,webpack-dev-server生成的包并没有放在你的真实目录中,而是放在了内存中</li>
-<li>publicPath: 为项目中的所有资源指定一个基础路径</li>
-</ul>
+<li><p>publicPath: 为项目中的所有资源指定一个基础路径</p>
+<a id="more"></a>
 <h3 id="loader要怎么写？"><a href="#loader要怎么写？" class="headerlink" title="loader要怎么写？"></a>loader要怎么写？</h3><h4 id="写法有很多-简单点说话的方式简单点"><a href="#写法有很多-简单点说话的方式简单点" class="headerlink" title="写法有很多,简单点说话的方式简单点"></a>写法有很多,简单点说话的方式简单点</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">        &#123;</span><br><span class="line">            test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">            exclude: <span class="regexp">/node_modules/</span>,</span><br><span class="line">            use: &#123;</span><br><span class="line">                loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    preset: [<span class="string">'env'</span>,<span class="string">'react'</span>]</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            test: <span class="regexp">/\.less$/</span>,</span><br><span class="line">            user: [</span><br><span class="line">                <span class="string">'style-loader'</span>,<span class="string">'css-loader?modules'</span>,<span class="string">'less-loader'</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            test: <span class="regexp">/\.(jpg|png|svg|gif)$/</span>,</span><br><span class="line">            use: [<span class="string">'file-loader'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
+</li>
 <li><p>file-loader<br>file-loader会把import进来的图片资源路径最后转换成输出目录图像的最终路径,同理css-loader也会将background-image:url(‘path’)一样处理</p>
 </li>
 <li><p>extract-text-webpack-plugin插件分离css后用html-webpack-plugin来动态加载css</p>
