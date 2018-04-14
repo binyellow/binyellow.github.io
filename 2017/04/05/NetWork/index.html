@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/network/https.png">
 <meta property="og:image" content="http://yoursite.com/img/network/OSI.jpg">
-<meta property="og:updated_time" content="2018-04-02T15:10:26.389Z">
+<meta property="og:updated_time" content="2018-04-14T12:39:44.632Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="想翻墙、无限流量，是不是应该先看看这些">
 <meta name="twitter:description" content="HTTPS 啥都别说先整张图 SSL加密层: 把http的内容加密后送到下层的TCP，从接收方看，这一层负责将TCP送来的数据解密还原成http的内容 数字证书：一种文件的名称，好比一个机构或人的签名，能够证明这个机构或人的真实性。其中包含的信息，用于实现上述功能 加密: 将明文通过加密变成密文，如果第三方无法解密的话，就算他获得密文也无能为力 对称加密：加密和解密使用相同的密钥 非对称密码算法:">
@@ -464,6 +464,67 @@
 <li>连接确认:当服务器套接字收到客户端套接字发来的请求后，就响应客户端套接字的请求,并建立一个新的线程,把服务器端的套接字的描述发给客户端。一旦客户端确认了此描述，就正式建立连接。而服务器套接字继续处于监听状态，继续接收其他客户端套接字的连接请求.</li>
 </ol>
 <p>Socket为长连接：通常情况下Socket 连接就是 TCP 连接，因此 Socket 连接一旦建立,通讯双方开始互发数据内容，直到双方断开连接。在实际应用中，由于网络节点过多，在传输过程中，会被节点断开连接，因此要通过轮询高速网络，该节点处于活跃状态</p>
+<h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Reason-phrase</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1XX</td>
+<td>Informational</td>
+<td>信息性状态码，表示接受的请求正在处理</td>
+</tr>
+<tr>
+<td>2XX</td>
+<td>Success</td>
+<td>成功状态码，表示请求正常处理完毕</td>
+</tr>
+<tr>
+<td>3XX</td>
+<td>Redirection</td>
+<td>重定向状态码，表示需要客户端需要进行附加操作</td>
+</tr>
+<tr>
+<td>4XX</td>
+<td>Client Error</td>
+<td>客户端错误状态码，表示服务器无法处理请求</td>
+</tr>
+<tr>
+<td>5XX</td>
+<td>Server Error</td>
+<td>服务器错误状态码，表示服务器处理请求出错</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2XX-Success"><a href="#2XX-Success" class="headerlink" title="2XX Success"></a>2XX Success</h4><ul>
+<li>200 OK</li>
+<li>204 No content</li>
+<li>206 Partial Content: 该状态码表示客户端进行了范围请求，而服务器成功执行了这部分的GET请求</li>
+</ul>
+<h4 id="3XX-Redirection"><a href="#3XX-Redirection" class="headerlink" title="3XX Redirection"></a>3XX Redirection</h4><p>响应结果表明浏览器需要执行某些特殊的处理以完成请求</p>
+<ul>
+<li>301 Movied Permanently: <em>永久性重定向。该状态码表示请求的资源已经被分配了新的URI，并且以后使用资源现在所指的URI。并且根据请求的方法有不同的处理方式</em></li>
+<li>302 Found: <em>临时性重定向。该状态码表示请求的资源已被分配了新的URI，希望用户本次能使用新的URI访问</em></li>
+<li>303 See Other: <em>该状态码表示由于请求对应的资源存在另一个URI，应<strong>使用GET</strong>方法定向获取请求的资源</em></li>
+<li>304 Not Modified: <em>该状态码表示客户端发送附带条件请求时，服务器端允许请求访问资源，但未满足条件的情况</em></li>
+<li>307 Temporary Redirect: <em>临时重定向,不会指定客户端要用什么样的请求方法请求重定向地址(302指定使用原有请求方法，303指定使用GET方法)</em></li>
+</ul>
+<h4 id="4XX-Client-Error"><a href="#4XX-Client-Error" class="headerlink" title="4XX Client Error"></a>4XX Client Error</h4><ul>
+<li>400 Bad Request: 请求报文中存在语法错误</li>
+<li>401 Unauthorized: 请求需要有通过HTTP认证(Basic认证，Digest认证)的认证信息</li>
+<li>403 Forbidden: 请求资源的访问被服务器拒绝了</li>
+<li>404 Not Found: 服务器上无法找到指定的资源</li>
+</ul>
+<h4 id="5XX-Server-Error"><a href="#5XX-Server-Error" class="headerlink" title="5XX Server Error"></a>5XX Server Error</h4><ul>
+<li>500 Internal Server Error: <em>服务器端在执行请求时发生了错误</em></li>
+<li>503 Service Unavailable: <em>服务器暂时处于超负载或正在进行停机维护</em></li>
+<li>505 Time Out: <em>服务器请求超时</em></li>
+</ul>
+<p><a href="https://www.cnblogs.com/hjxcode/p/5663830.html" target="_blank" rel="noopener">更多详情</a></p>
 
       
     </div>
@@ -613,7 +674,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -624,7 +685,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -635,7 +696,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -708,7 +769,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS"><span class="nav-number">1.</span> <span class="nav-text">HTTPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP"><span class="nav-number">2.</span> <span class="nav-text">TCP/IP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">2.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是VPN"><span class="nav-number">3.</span> <span class="nav-text">什么是VPN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SS-SSR-SSL-TSL"><span class="nav-number">4.</span> <span class="nav-text">SS-SSR-SSL-TSL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PAC-直连模式-全局模式"><span class="nav-number">5.</span> <span class="nav-text">PAC-直连模式-全局模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混淆"><span class="nav-number">6.</span> <span class="nav-text">混淆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx正向-反向代理"><span class="nav-number">7.</span> <span class="nav-text">Nginx正向-反向代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI"><span class="nav-number">8.</span> <span class="nav-text">OSI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SOCKET"><span class="nav-number">9.</span> <span class="nav-text">SOCKET</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Socket-连接-至少需要一对套接字，分为-clientSocket，serverSocket-连接分为3个步骤"><span class="nav-number">9.0.1.</span> <span class="nav-text">Socket 连接,至少需要一对套接字，分为 clientSocket，serverSocket 连接分为3个步骤:</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS"><span class="nav-number">1.</span> <span class="nav-text">HTTPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP"><span class="nav-number">2.</span> <span class="nav-text">TCP/IP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">2.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是VPN"><span class="nav-number">3.</span> <span class="nav-text">什么是VPN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SS-SSR-SSL-TSL"><span class="nav-number">4.</span> <span class="nav-text">SS-SSR-SSL-TSL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PAC-直连模式-全局模式"><span class="nav-number">5.</span> <span class="nav-text">PAC-直连模式-全局模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混淆"><span class="nav-number">6.</span> <span class="nav-text">混淆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx正向-反向代理"><span class="nav-number">7.</span> <span class="nav-text">Nginx正向-反向代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI"><span class="nav-number">8.</span> <span class="nav-text">OSI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SOCKET"><span class="nav-number">9.</span> <span class="nav-text">SOCKET</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Socket-连接-至少需要一对套接字，分为-clientSocket，serverSocket-连接分为3个步骤"><span class="nav-number">9.0.1.</span> <span class="nav-text">Socket 连接,至少需要一对套接字，分为 clientSocket，serverSocket 连接分为3个步骤:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态码"><span class="nav-number">10.</span> <span class="nav-text">状态码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2XX-Success"><span class="nav-number">10.1.</span> <span class="nav-text">2XX Success</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3XX-Redirection"><span class="nav-number">10.2.</span> <span class="nav-text">3XX Redirection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4XX-Client-Error"><span class="nav-number">10.3.</span> <span class="nav-text">4XX Client Error</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5XX-Server-Error"><span class="nav-number">10.4.</span> <span class="nav-text">5XX Server Error</span></a></li></ol></li></ol></div>
             
 
           </div>
