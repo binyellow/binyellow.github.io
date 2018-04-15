@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="HTTP,TCP/IP," />
+  <meta name="keywords" content="IDE,npm," />
 
 
 
@@ -79,21 +79,18 @@
 
 
 
-<meta name="description" content="HTTPS 啥都别说先整张图 SSL加密层: 把http的内容加密后送到下层的TCP，从接收方看，这一层负责将TCP送来的数据解密还原成http的内容 数字证书：一种文件的名称，好比一个机构或人的签名，能够证明这个机构或人的真实性。其中包含的信息，用于实现上述功能 加密: 将明文通过加密变成密文，如果第三方无法解密的话，就算他获得密文也无能为力 对称加密：加密和解密使用相同的密钥 非对称密码算法:">
-<meta name="keywords" content="HTTP,TCP&#x2F;IP">
+<meta name="description" content="VsCode常用插件首先是如何备份和还原 Settings Sync插件 上传shift+alt+u会自动进入github令牌界面,生成key并点gist 将生成的秘钥输入命令行 下载shift+alt+d  主题 Dark+(default dark) theme-dark-monokai">
+<meta name="keywords" content="IDE,npm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="想翻墙、无限流量，是不是应该先看看这些">
-<meta property="og:url" content="http://yoursite.com/2017/04/05/NetWork/index.html">
+<meta property="og:title" content="VsCode yarn总结">
+<meta property="og:url" content="http://yoursite.com/2018/04/15/VsCode-yarn总结/index.html">
 <meta property="og:site_name" content="YellowBin">
-<meta property="og:description" content="HTTPS 啥都别说先整张图 SSL加密层: 把http的内容加密后送到下层的TCP，从接收方看，这一层负责将TCP送来的数据解密还原成http的内容 数字证书：一种文件的名称，好比一个机构或人的签名，能够证明这个机构或人的真实性。其中包含的信息，用于实现上述功能 加密: 将明文通过加密变成密文，如果第三方无法解密的话，就算他获得密文也无能为力 对称加密：加密和解密使用相同的密钥 非对称密码算法:">
+<meta property="og:description" content="VsCode常用插件首先是如何备份和还原 Settings Sync插件 上传shift+alt+u会自动进入github令牌界面,生成key并点gist 将生成的秘钥输入命令行 下载shift+alt+d  主题 Dark+(default dark) theme-dark-monokai">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/img/network/https.png">
-<meta property="og:image" content="http://yoursite.com/img/network/OSI.jpg">
-<meta property="og:updated_time" content="2018-04-14T12:48:37.205Z">
+<meta property="og:updated_time" content="2018-04-15T15:23:06.716Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="想翻墙、无限流量，是不是应该先看看这些">
-<meta name="twitter:description" content="HTTPS 啥都别说先整张图 SSL加密层: 把http的内容加密后送到下层的TCP，从接收方看，这一层负责将TCP送来的数据解密还原成http的内容 数字证书：一种文件的名称，好比一个机构或人的签名，能够证明这个机构或人的真实性。其中包含的信息，用于实现上述功能 加密: 将明文通过加密变成密文，如果第三方无法解密的话，就算他获得密文也无能为力 对称加密：加密和解密使用相同的密钥 非对称密码算法:">
-<meta name="twitter:image" content="http://yoursite.com/img/network/https.png">
+<meta name="twitter:title" content="VsCode yarn总结">
+<meta name="twitter:description" content="VsCode常用插件首先是如何备份和还原 Settings Sync插件 上传shift+alt+u会自动进入github令牌界面,生成key并点gist 将生成的秘钥输入命令行 下载shift+alt+d  主题 Dark+(default dark) theme-dark-monokai">
 
 
 
@@ -123,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/05/NetWork/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/15/VsCode-yarn总结/"/>
 
 
 
 
 
-  <title>想翻墙、无限流量，是不是应该先看看这些 | YellowBin</title>
+  <title>VsCode yarn总结 | YellowBin</title>
   
 
 
@@ -300,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/NetWork/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/15/VsCode-yarn总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bin Yellow">
@@ -317,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">想翻墙、无限流量，是不是应该先看看这些</h1>
+          <h1 class="post-title" itemprop="name headline">VsCode yarn总结</h1>
         
 
         <div class="post-meta">
@@ -329,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-05T20:44:29+08:00">
-                2017-04-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-15T22:17:02+08:00">
+                2018-04-15
               </time>
             
 
@@ -352,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NetWork/" itemprop="url" rel="index">
-                    <span itemprop="name">NetWork</span>
+                  <a href="/categories/Dev-Tools/" itemprop="url" rel="index">
+                    <span itemprop="name">Dev-Tools</span>
                   </a>
                 </span>
 
@@ -389,142 +386,81 @@
       
 
       
-        <h3 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h3><ul>
-<li>啥都别说先整张图<br><img src="/img/network/https.png" alt=""></li>
-<li><strong>SSL加密层</strong>: 把http的内容加密后送到下层的TCP，从接收方看，这一层负责将TCP送来的数据解密还原成http的内容<ul>
-<li><strong>数字证书</strong>：一种文件的名称，好比一个机构或人的签名，能够证明这个机构或人的真实性。其中包含的信息，用于实现上述功能</li>
-<li><strong>加密</strong>: 将明文通过加密变成密文，如果第三方无法解密的话，就算他获得密文也无能为力<ul>
-<li>对称加密：加密和解密使用相同的密钥</li>
-<li>非对称密码算法: <ul>
-<li>服务器把自己的公钥登录至数字证书认证机构</li>
-<li>证书机构把自己的私有密钥向服务器的公开密码部署数字签名并颁发公钥证书</li>
-<li>客户端拿到服务器的公钥证书后，使用数字证书认证机构的公开密钥，向数字证书认证机构验证公钥证书上的数字签名。以确认服务器公钥的真实性</li>
-<li>使用服务器的公开密钥对报文加密后发送</li>
-<li>服务器用私有密钥对报文解密</li>
+        <h2 id="VsCode常用插件"><a href="#VsCode常用插件" class="headerlink" title="VsCode常用插件"></a>VsCode常用插件</h2><h3 id="首先是如何备份和还原"><a href="#首先是如何备份和还原" class="headerlink" title="首先是如何备份和还原"></a>首先是如何备份和还原</h3><ul>
+<li>Settings Sync插件</li>
+<li>上传<code>shift+alt+u</code>会自动进入github令牌界面,生成key并点gist</li>
+<li>将生成的秘钥输入命令行</li>
+<li>下载<code>shift+alt+d</code></li>
 </ul>
-</li>
-<li>散列算法：公开的算法,MD5</li>
-</ul>
-</li>
-<li><strong>认证</strong>是指通信双方为了确认对方是值得信任的消息发送或接受方,相当于一个鉴定中心颁发的证书<a id="more"></a>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3><h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><ol>
-<li>参数解释<ul>
-<li>seq: 标识字节流</li>
-<li>ack: ack=seq+1,确认序号</li>
-<li>ACK：确认序号有效</li>
-<li>SYN：发起一个新连接</li>
-<li>FIN：释放一个连接</li>
-</ul>
-</li>
-<li>为什么要第三次确认？<ul>
-<li>因为怕出现已失效的连接请求报文段<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4></li>
-</ul>
-</li>
-<li>为什么要四次挥手？<ul>
-<li>当服务器收到FIN时,很可能还没传完数据,所以先说我已经收到FIN指令了,等发送完再发FIN</li>
-</ul>
-</li>
+<h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><ol>
+<li>Dark+(default dark)</li>
+<li>theme-dark-monokai<a id="more"></a>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3></li>
+<li>Auto Close Tag: 自动闭合标签</li>
+<li>Auto Rename Tag: 自动重命名标签</li>
+<li>Beautify: 格式化不同格式代码</li>
+<li>Bracket Pair Colorizer: 括号颜色</li>
+<li>Code Outline: 将源代码的方法、变量、类单独列出来</li>
+<li>Code Runner: 执行选中的代码</li>
+<li>Code Spell Checker: 检验代码拼写</li>
+<li>Document This: 为方法添加注释</li>
+<li>ESLint: eslint代码检查</li>
+<li>GitLens: 显示代码对应修改人和时间</li>
+<li>Guides: 代码缩进标线</li>
+<li>Git history: git历史提交</li>
+<li>JavaScript(ES6)code snippets: ES6代码缩写速配</li>
+<li>MarkDown All in One: MarkDown编写自动提示</li>
+<li>MarkDown Preview Github: github预览模式</li>
+<li>Node.js Modules Intellisense: 模块导入提示</li>
+<li>Open in browser: alt+B打开浏览器</li>
+<li>Path intellisense: 路径提示</li>
+<li>psioniq File Header: 文件头标识</li>
+<li>React/Redux/React-Router Snippets: React提示</li>
+<li>React.js code snippets: React提示</li>
+<li>Todo Highlight: todos高亮</li>
+<li>vscode-icon: 图标区分</li>
 </ol>
-<h3 id="什么是VPN"><a href="#什么是VPN" class="headerlink" title="什么是VPN"></a>什么是VPN</h3><ul>
-<li>vpn–虚拟专用网络，它的功能是：在公用网络上建立专用网络，进行加密通讯。你和vpn之间的通信是否加密，取决于你连接vpn的方式或者协议<h3 id="SS-SSR-SSL-TSL"><a href="#SS-SSR-SSL-TSL" class="headerlink" title="SS-SSR-SSL-TSL"></a>SS-SSR-SSL-TSL</h3></li>
-<li>shadowsocks(影梭): ss和ssr它的原理都是一样的，就是socks5代理,socks5代理是把你的网络数据请求通过一条连接你和代理服务器之间的通道，由服务器转发到目的地，这个过程中你是没有通过一条专用通道的，只是数据包的发出，然后被代理服务器收到</li>
-<li>ssr: 支持协议转换、协议混淆、多重代理。SS开源，SSR闭源</li>
-<li>SSL(Secure Socket Layer): SSL是VPN的一种实现方式</li>
-<li>TSL相当于是SSL的升级版</li>
-<li><a href="https://blog.csdn.net/ShellDawn/article/details/78345240" target="_blank" rel="noopener">更多</a><h3 id="PAC-直连模式-全局模式"><a href="#PAC-直连模式-全局模式" class="headerlink" title="PAC-直连模式-全局模式"></a>PAC-直连模式-全局模式</h3></li>
-<li>PAC: 国内地址不走代理，国外走代理</li>
-<li>直连模式: 流量不走代理</li>
-<li>全局：全部走代理<h3 id="混淆"><a href="#混淆" class="headerlink" title="混淆"></a>混淆</h3></li>
-<li>协议插件: 定义加密前的协议，通常用于长度混淆及增强安全性和隐蔽性</li>
-<li>混淆：为了伪装，使原本的上网数据伪装成其他的数据，访问HTTPS网站的时候会用SSL证书把网站加密起来<h3 id="Nginx正向-反向代理"><a href="#Nginx正向-反向代理" class="headerlink" title="Nginx正向-反向代理"></a>Nginx正向-反向代理</h3></li>
-<li>正向代理：当我们要访问google时,用代理服务器访问,那么要访问的服务器是明确的,但是服务器不知道是哪个客户端</li>
-<li>反向代理：像淘宝这种流量巨大的网站,当某台服务器负载扛不住的时候,Nginx接受到客户端的请求时,会根据一定的规则来分发给不同的服务器,此时客户端是明确的,服务器却不明确了</li>
-</ul>
-<h3 id="OSI"><a href="#OSI" class="headerlink" title="OSI"></a>OSI</h3><p><img src="/img/network/OSI.jpg" alt=""></p>
-<ul>
-<li>应用层：邮件、文件传输、HTTP超文本传输协议等,为用户的应用程序（例如电子邮件、文件传输和终端仿真）提供网络服务</li>
-<li>表示层：确保一个系统的应用层所发送的信息可以被另一个系统的应用层读取</li>
-<li>会话层：通过传输层（端口号：传输端口与接收端口）建立数据传输的通路，主要在你的系统之间发起会话或者接受会话请求</li>
-<li>传输层：定义了一些传输数据的协议和端口号（WWW端口80等）</li>
-<li>网络层：在位于不同地理位置的网络中的两个主机系统之间提供连接和路径选择</li>
-<li>数据链路层：如何让格式化数据以进行传输,还有错误检查和纠正</li>
-<li>物理层：定义物理设备标准，如网线的接口类型、光纤的接口类型、各种传输介质的传输速率等</li>
-</ul>
-<h3 id="SOCKET"><a href="#SOCKET" class="headerlink" title="SOCKET"></a>SOCKET</h3><ul>
-<li>socket是一种操作系统提供的进程间通信机制</li>
-<li>套接字接口: 以IP地址及通信端口组成套接字地址,远程的套接字地址，以及本地的套接字地址完成连接后，再加上使用的协议，这个五元组，作为套接字对，之后就可以彼此交换数据<h5 id="Socket-连接-至少需要一对套接字，分为-clientSocket，serverSocket-连接分为3个步骤"><a href="#Socket-连接-至少需要一对套接字，分为-clientSocket，serverSocket-连接分为3个步骤" class="headerlink" title="Socket 连接,至少需要一对套接字，分为 clientSocket，serverSocket 连接分为3个步骤:"></a>Socket 连接,至少需要一对套接字，分为 clientSocket，serverSocket 连接分为3个步骤:</h5></li>
-</ul>
-<ol>
-<li>服务器监听:服务器并不定位具体客户端的套接字，而是时刻处于监听状态；</li>
-<li>客户端请求:客户端的套接字要描述它要连接的服务器的套接字，提供地址和端口号，然后向服务器套接字提出连接请求；</li>
-<li>连接确认:当服务器套接字收到客户端套接字发来的请求后，就响应客户端套接字的请求,并建立一个新的线程,把服务器端的套接字的描述发给客户端。一旦客户端确认了此描述，就正式建立连接。而服务器套接字继续处于监听状态，继续接收其他客户端套接字的连接请求.</li>
-</ol>
-<p>Socket为长连接：通常情况下Socket 连接就是 TCP 连接，因此 Socket 连接一旦建立,通讯双方开始互发数据内容，直到双方断开连接。在实际应用中，由于网络节点过多，在传输过程中，会被节点断开连接，因此要通过轮询高速网络，该节点处于活跃状态</p>
-<h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><table>
+<h2 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h2><table>
 <thead>
 <tr>
-<th>Type</th>
-<th>Reason-phrase</th>
-<th>Note</th>
+<th>npm</th>
+<th>yarn</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1XX</td>
-<td>Informational</td>
-<td>信息性状态码，表示接受的请求正在处理</td>
+<td>npm install</td>
+<td>yarn</td>
+<td></td>
 </tr>
 <tr>
-<td>2XX</td>
-<td>Success</td>
-<td>成功状态码，表示请求正常处理完毕</td>
+<td>npm i –save</td>
+<td>yarn add</td>
+<td></td>
 </tr>
 <tr>
-<td>3XX</td>
-<td>Redirection</td>
-<td>重定向状态码，表示需要客户端需要进行附加操作</td>
+<td>npm uninstall package –save</td>
+<td>yarn remove package</td>
+<td></td>
 </tr>
 <tr>
-<td>4XX</td>
-<td>Client Error</td>
-<td>客户端错误状态码，表示服务器无法处理请求</td>
+<td>npm i package -D</td>
+<td>yarn add package -D</td>
+<td></td>
 </tr>
 <tr>
-<td>5XX</td>
-<td>Server Error</td>
-<td>服务器错误状态码，表示服务器处理请求出错</td>
+<td>npm install [package] –global</td>
+<td>yarn global add [package]</td>
+<td></td>
+</tr>
+<tr>
+<td>rm -rf node_modules &amp;&amp; npm install</td>
+<td>yarn upgrade</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h4 id="2XX-Success"><a href="#2XX-Success" class="headerlink" title="2XX Success"></a>2XX Success</h4><ul>
-<li>200 OK</li>
-<li>204 No content</li>
-<li>206 Partial Content: 该状态码表示客户端进行了范围请求，而服务器成功执行了这部分的GET请求</li>
-</ul>
-<h4 id="3XX-Redirection"><a href="#3XX-Redirection" class="headerlink" title="3XX Redirection"></a>3XX Redirection</h4><p>响应结果表明浏览器需要执行某些特殊的处理以完成请求</p>
-<ul>
-<li>301 Movied Permanently: <em>永久性重定向。该状态码表示请求的资源已经被分配了新的URI，并且以后使用资源现在所指的URI。并且根据请求的方法有不同的处理方式</em></li>
-<li>302 Found: <em>临时性重定向。该状态码表示请求的资源已被分配了新的URI，希望用户本次能使用新的URI访问</em></li>
-<li>303 See Other: <em>该状态码表示由于请求对应的资源存在另一个URI，应<strong>使用GET</strong>方法定向获取请求的资源</em></li>
-<li>304 Not Modified: <em>该状态码表示客户端发送附带条件请求时，服务器端允许请求访问资源，但未满足条件的情况</em></li>
-<li>307 Temporary Redirect: <em>临时重定向,不会指定客户端要用什么样的请求方法请求重定向地址(302指定使用原有请求方法，303指定使用GET方法)</em></li>
-</ul>
-<h4 id="4XX-Client-Error"><a href="#4XX-Client-Error" class="headerlink" title="4XX Client Error"></a>4XX Client Error</h4><ul>
-<li>400 Bad Request: 请求报文中存在语法错误</li>
-<li>401 Unauthorized: 请求需要有通过HTTP认证(Basic认证，Digest认证)的认证信息</li>
-<li>403 Forbidden: 请求资源的访问被服务器拒绝了</li>
-<li>404 Not Found: 服务器上无法找到指定的资源</li>
-</ul>
-<h4 id="5XX-Server-Error"><a href="#5XX-Server-Error" class="headerlink" title="5XX Server Error"></a>5XX Server Error</h4><ul>
-<li>500 Internal Server Error: <em>服务器端在执行请求时发生了错误</em></li>
-<li>503 Service Unavailable: <em>服务器暂时处于超负载或正在进行停机维护</em></li>
-<li>505 Time Out: <em>服务器请求超时</em></li>
-</ul>
-<p><a href="https://www.cnblogs.com/hjxcode/p/5663830.html" target="_blank" rel="noopener">更多详情</a></p>
 
       
     </div>
@@ -566,9 +502,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+            <a href="/tags/IDE/" rel="tag"># IDE</a>
           
-            <a href="/tags/TCP-IP/" rel="tag"># TCP/IP</a>
+            <a href="/tags/npm/" rel="tag"># npm</a>
           
         </div>
       
@@ -581,8 +517,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/02/正则小记/" rel="next" title="正则小记">
-                <i class="fa fa-chevron-left"></i> 正则小记
+              <a href="/2018/04/03/Todo/" rel="next" title="Todo">
+                <i class="fa fa-chevron-left"></i> Todo
               </a>
             
           </div>
@@ -590,10 +526,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/02/Flex-Grid/" rel="prev" title="Flex-Grid">
-                Flex-Grid <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -769,7 +701,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS"><span class="nav-number">1.</span> <span class="nav-text">HTTPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP"><span class="nav-number">2.</span> <span class="nav-text">TCP/IP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">2.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是VPN"><span class="nav-number">3.</span> <span class="nav-text">什么是VPN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SS-SSR-SSL-TSL"><span class="nav-number">4.</span> <span class="nav-text">SS-SSR-SSL-TSL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PAC-直连模式-全局模式"><span class="nav-number">5.</span> <span class="nav-text">PAC-直连模式-全局模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混淆"><span class="nav-number">6.</span> <span class="nav-text">混淆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx正向-反向代理"><span class="nav-number">7.</span> <span class="nav-text">Nginx正向-反向代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI"><span class="nav-number">8.</span> <span class="nav-text">OSI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SOCKET"><span class="nav-number">9.</span> <span class="nav-text">SOCKET</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Socket-连接-至少需要一对套接字，分为-clientSocket，serverSocket-连接分为3个步骤"><span class="nav-number">9.0.1.</span> <span class="nav-text">Socket 连接,至少需要一对套接字，分为 clientSocket，serverSocket 连接分为3个步骤:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态码"><span class="nav-number">10.</span> <span class="nav-text">状态码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2XX-Success"><span class="nav-number">10.1.</span> <span class="nav-text">2XX Success</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3XX-Redirection"><span class="nav-number">10.2.</span> <span class="nav-text">3XX Redirection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4XX-Client-Error"><span class="nav-number">10.3.</span> <span class="nav-text">4XX Client Error</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5XX-Server-Error"><span class="nav-number">10.4.</span> <span class="nav-text">5XX Server Error</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#VsCode常用插件"><span class="nav-number">1.</span> <span class="nav-text">VsCode常用插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首先是如何备份和还原"><span class="nav-number">1.1.</span> <span class="nav-text">首先是如何备份和还原</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题"><span class="nav-number">1.2.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件"><span class="nav-number">1.3.</span> <span class="nav-text">插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yarn"><span class="nav-number">2.</span> <span class="nav-text">yarn</span></a></li></ol></div>
             
 
           </div>

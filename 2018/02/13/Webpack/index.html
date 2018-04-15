@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="YellowBin">
 <meta property="og:description" content="注意插件和loader版本问题,要适配webpack4.0 Webpack自动刷新和模块热替换自动刷新 iframe模式 inline模式  模块热替换（–hot): 是指不需要完全刷新就能更新各个模块 要使用模块热替换需指定publicPath: 因为存在path的情况下,webpack-dev-server生成的包并没有放在你的真实目录中,而是放在了内存中 publicPath: 为项目中的所">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-15T03:22:03.571Z">
+<meta property="og:updated_time" content="2018-04-15T09:58:18.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack">
 <meta name="twitter:description" content="注意插件和loader版本问题,要适配webpack4.0 Webpack自动刷新和模块热替换自动刷新 iframe模式 inline模式  模块热替换（–hot): 是指不需要完全刷新就能更新各个模块 要使用模块热替换需指定publicPath: 因为存在path的情况下,webpack-dev-server生成的包并没有放在你的真实目录中,而是放在了内存中 publicPath: 为项目中的所">
@@ -440,7 +440,11 @@
 <li>语法: require.ensure(dependencies: String[], callback: function([require]), [chunkName: String])</li>
 <li>dependencies: 依赖的模块数组</li>
 <li>callback: 回调函数，该函数调用时会传一个require参数</li>
-<li>chunkName: 模块名，用于构建时生成文件时命名使用<br>注意点：requi.ensure的模块只会被下载下来，不会被执行，只有在回调函数使用require(模块名)后，这个模块才会被执行。</li>
+<li>chunkName: 模块名，用于构建时生成文件时命名使用<br>注意点：require.ensure的模块只会被下载下来，不会被执行，只有在回调函数使用require(模块名)后，这个模块才会被执行。</li>
+</ul>
+<h4 id="import-then"><a href="#import-then" class="headerlink" title="import.then"></a>import.then</h4><ul>
+<li><code>import(/*webpackChunkName:&#39;testB&#39;*/&#39;./SubPageB&#39;).then((SubPageB)=&gt;console.log(SubPageB))</code></li>
+<li>注释是webpack3的魔法注释,也就是打包后的文件名</li>
 </ul>
 
       
@@ -589,7 +593,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -600,7 +604,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -611,7 +615,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -684,7 +688,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Webpack自动刷新和模块热替换"><span class="nav-number">1.</span> <span class="nav-text">Webpack自动刷新和模块热替换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自动刷新"><span class="nav-number">1.1.</span> <span class="nav-text">自动刷新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模块热替换（–hot-是指不需要完全刷新就能更新各个模块"><span class="nav-number">1.2.</span> <span class="nav-text">模块热替换（–hot): 是指不需要完全刷新就能更新各个模块</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loader要怎么写？"><span class="nav-number">2.</span> <span class="nav-text">loader要怎么写？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#写法有很多-简单点说话的方式简单点"><span class="nav-number">2.1.</span> <span class="nav-text">写法有很多,简单点说话的方式简单点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plugins"><span class="nav-number">3.</span> <span class="nav-text">plugins</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#eslint"><span class="nav-number">3.1.</span> <span class="nav-text">eslint</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tree-shaking"><span class="nav-number">4.</span> <span class="nav-text">tree-shaking</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置mode来快速"><span class="nav-number">5.</span> <span class="nav-text">设置mode来快速</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#development"><span class="nav-number">5.1.</span> <span class="nav-text">development</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#production"><span class="nav-number">5.2.</span> <span class="nav-text">production</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#splitChunks代码分割"><span class="nav-number">6.</span> <span class="nav-text">splitChunks代码分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lazyLoad"><span class="nav-number">7.</span> <span class="nav-text">lazyLoad</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#require-ensure"><span class="nav-number">7.1.</span> <span class="nav-text">require.ensure</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Webpack自动刷新和模块热替换"><span class="nav-number">1.</span> <span class="nav-text">Webpack自动刷新和模块热替换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自动刷新"><span class="nav-number">1.1.</span> <span class="nav-text">自动刷新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模块热替换（–hot-是指不需要完全刷新就能更新各个模块"><span class="nav-number">1.2.</span> <span class="nav-text">模块热替换（–hot): 是指不需要完全刷新就能更新各个模块</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loader要怎么写？"><span class="nav-number">2.</span> <span class="nav-text">loader要怎么写？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#写法有很多-简单点说话的方式简单点"><span class="nav-number">2.1.</span> <span class="nav-text">写法有很多,简单点说话的方式简单点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plugins"><span class="nav-number">3.</span> <span class="nav-text">plugins</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#eslint"><span class="nav-number">3.1.</span> <span class="nav-text">eslint</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tree-shaking"><span class="nav-number">4.</span> <span class="nav-text">tree-shaking</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置mode来快速"><span class="nav-number">5.</span> <span class="nav-text">设置mode来快速</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#development"><span class="nav-number">5.1.</span> <span class="nav-text">development</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#production"><span class="nav-number">5.2.</span> <span class="nav-text">production</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#splitChunks代码分割"><span class="nav-number">6.</span> <span class="nav-text">splitChunks代码分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lazyLoad"><span class="nav-number">7.</span> <span class="nav-text">lazyLoad</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#require-ensure"><span class="nav-number">7.1.</span> <span class="nav-text">require.ensure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#import-then"><span class="nav-number">7.2.</span> <span class="nav-text">import.then</span></a></li></ol></li></ol></div>
             
 
           </div>
