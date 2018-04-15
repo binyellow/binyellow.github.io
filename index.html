@@ -981,9 +981,11 @@
           <p><em>注意插件和loader版本问题,要适配webpack4.0</em></p>
 <h3 id="Webpack自动刷新和模块热替换"><a href="#Webpack自动刷新和模块热替换" class="headerlink" title="Webpack自动刷新和模块热替换"></a>Webpack自动刷新和模块热替换</h3><h4 id="自动刷新"><a href="#自动刷新" class="headerlink" title="自动刷新"></a>自动刷新</h4><ul>
 <li>iframe模式</li>
-<li>inline模式<h4 id="模块热替换（–hot-是指不需要完全刷新就能更新各个模块"><a href="#模块热替换（–hot-是指不需要完全刷新就能更新各个模块" class="headerlink" title="模块热替换（–hot): 是指不需要完全刷新就能更新各个模块"></a>模块热替换（–hot): 是指不需要完全刷新就能更新各个模块</h4></li>
+<li>inline模式</li>
+</ul>
+<h4 id="模块热替换（–hot-是指不需要完全刷新就能更新各个模块"><a href="#模块热替换（–hot-是指不需要完全刷新就能更新各个模块" class="headerlink" title="模块热替换（–hot): 是指不需要完全刷新就能更新各个模块"></a>模块热替换（–hot): 是指不需要完全刷新就能更新各个模块</h4><ul>
 <li>要使用模块热替换需指定publicPath: 因为存在path的情况下,webpack-dev-server生成的包并没有放在你的真实目录中,而是放在了内存中</li>
-<li><p>publicPath: 为项目中的所有资源指定一个基础路径</p>
+<li>publicPath: 为项目中的所有资源指定一个基础路径
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/02/13/Webpack/#more" rel="contents">
