@@ -11,6 +11,7 @@ categories: Todo
 3. 优化
 4. Redux-soga
 5. ES-Lint
+6. VsCode插件汇总
 
 
 ![](/img/network/https.png)
