@@ -24,6 +24,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[react-redux]]></title>
+    <url>%2F2018%2F03%2F18%2Freact-redux%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>React-Redux</category>
+      </categories>
+      <tags>
+        <tag>Redux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Node-HTTP]]></title>
     <url>%2F2018%2F03%2F16%2FNode-HTTP%2F</url>
     <content type="text"><![CDATA[http模块创建http服务端、客户端http.createServer()、new http.Server()来创建服务器 http.Server事件 request(req,res):客户端发起请求时触发 req事件： data:当数据请求时,返回接收的数据chunk end:数据请求完 close:请求结束 req属性: method:请求方法 headers:请求头 url:请求路径 httpVersion:http协议版本 res事件： writeHead:发送相应头 write:向客户端发送内容 end:结束发送请求http.request(option,[callback])、http.get(option,[callback])来创建客户端 http.request事件 write:发送请求数据 response:接收到相应 end:发送请求完毕模拟客户端和服务端通信 客户端 1234567891011121314151617const http = require('http')let resData = '';const req = http.request(&#123; 'host': '127.0.0.1', 'port': 3000, 'method': 'post',&#125;)req.on('response',res=&gt;&#123; res.on('data', function (chunk) &#123; resData += chunk &#125;); res.on('end', function () &#123; console.log(console.log('服务端发送的数据是:',resData)) &#125;);&#125;)req.write('我是客户端');req.end() 服务端 1234567891011121314const http = require('http')const server = new http.createServer((req,res)=&gt;&#123; let test = ''; req.on('data',chunk=&gt;&#123; test += chunk; &#125;) req.on('end',()=&gt;console.log('客户端发送的请求是:',test)) res.writeHead(200,&#123;'content-type':'test/html'&#125;) res.write("我是服务端") res.end()&#125;);server.listen(3000,()=&gt;console.log('Server listen on 3000 start'))]]></content>
