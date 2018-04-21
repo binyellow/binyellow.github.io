@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[study]]></title>
+    <url>%2F2095%2F03%2F14%2Flife-study%2F</url>
+    <content type="text"><![CDATA[关于学习的前言 方法是重要的，笔记是重要的，2/8原理也是重要的 整体目标和短期目标是重要的 培养自己的学习能力然后就是坚持下去 JS 执行上下文（this和闭包） 事件模型 任务队列 原形，面向对象 promise es6重要但容易忽略的地方 常见函数 设计模式 类型检测 垃圾回收，引用计数和标记清除 模块化，commonJS，es6，cmd，amd 算法 基本排序 二叉树 牛客网多逛逛 计算机网络 https http2 http状态码 网络安全，xss和csrf session，cookie和token OSI七层协议 缓存 跨域 cdn及dns 参考 鹅厂大佬的前端路线：还有其他文章，不多但是比较精 阿里面经: 个人文章也是不多,面经路线比较好 node有几篇文章不错 张鑫旭css csdn前端大神表 待办 博客加评论]]></content>
+      <categories>
+        <category>Path</category>
+      </categories>
+      <tags>
+        <tag>Study</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[VsCode yarn总结]]></title>
     <url>%2F2018%2F04%2F15%2FVsCode-yarn%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[VsCode常用插件首先是如何备份和还原 Settings Sync插件 上传shift+alt+u会自动进入github令牌界面,生成key并点gist 将生成的秘钥输入命令行 下载shift+alt+d 主题 Dark+(default dark) theme-dark-monokai 插件 Auto Close Tag: 自动闭合标签 Auto Rename Tag: 自动重命名标签 Beautify: 格式化不同格式代码 Bracket Pair Colorizer: 括号颜色 Code Outline: 将源代码的方法、变量、类单独列出来 Code Runner: 执行选中的代码 Code Spell Checker: 检验代码拼写 Document This: 为方法添加注释 ESLint: eslint代码检查 GitLens: 显示代码对应修改人和时间 Guides: 代码缩进标线 Git history: git历史提交 JavaScript(ES6)code snippets: ES6代码缩写速配 MarkDown All in One: MarkDown编写自动提示 MarkDown Preview Github: github预览模式 Node.js Modules Intellisense: 模块导入提示 Open in browser: alt+B打开浏览器 Path intellisense: 路径提示 psioniq File Header: 文件头标识 React/Redux/React-Router Snippets: React提示 React.js code snippets: React提示 Todo Highlight: todos高亮 vscode-icon: 图标区分 yarn npm yarn 说明 npm install yarn npm i –save yarn add npm uninstall package –save yarn remove package npm i package -D yarn add package -D npm install [package] –global yarn global add [package] rm -rf node_modules &amp;&amp; npm install yarn upgrade]]></content>
@@ -42,8 +53,8 @@
         <category>计算机网络</category>
       </categories>
       <tags>
-        <tag>HTTP</tag>
         <tag>Node</tag>
+        <tag>HTTP</tag>
       </tags>
   </entry>
   <entry>
