@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[study]]></title>
-    <url>%2F2095%2F03%2F14%2Flife-study%2F</url>
+    <url>%2F2095%2F03%2F14%2Fstudy%2F</url>
     <content type="text"><![CDATA[关于学习的前言 方法是重要的，笔记是重要的，2/8原理也是重要的 整体目标和短期目标是重要的 培养自己的学习能力然后就是坚持下去 JS 执行上下文（this和闭包） 事件模型 任务队列 原形，面向对象 promise es6重要但容易忽略的地方 常见函数 设计模式 类型检测 垃圾回收，引用计数和标记清除 模块化，commonJS，es6，cmd，amd 算法 基本排序 二叉树 牛客网多逛逛 计算机网络 https http2 http状态码 网络安全，xss和csrf session，cookie和token OSI七层协议 缓存 跨域 cdn及dns 参考 鹅厂大佬的前端路线：还有其他文章，不多但是比较精 阿里面经: 个人文章也是不多,面经路线比较好 node有几篇文章不错 张鑫旭css csdn前端大神表 待办 博客加评论]]></content>
       <categories>
         <category>Path</category>
