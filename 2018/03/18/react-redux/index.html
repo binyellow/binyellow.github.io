@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="context了解一下 上下文环境 使用了就要类型校验  &amp;lt;–!more–&amp;gt; 在传入context的组件中要校验context类型并返回context12345678910111213141516171819202122class App extends Component &amp;#123;  constructor(props)&amp;#123;    super(props);    thi">
+<meta name="description" content="context了解一下 上下文环境 使用了就要类型校验">
 <meta name="keywords" content="Redux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react-redux">
 <meta property="og:url" content="http://yoursite.com/2018/03/18/react-redux/index.html">
 <meta property="og:site_name" content="YellowBin">
-<meta property="og:description" content="context了解一下 上下文环境 使用了就要类型校验  &amp;lt;–!more–&amp;gt; 在传入context的组件中要校验context类型并返回context12345678910111213141516171819202122class App extends Component &amp;#123;  constructor(props)&amp;#123;    super(props);    thi">
+<meta property="og:description" content="context了解一下 上下文环境 使用了就要类型校验">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-22T04:33:30.044Z">
+<meta property="og:updated_time" content="2018-04-22T14:27:33.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-redux">
-<meta name="twitter:description" content="context了解一下 上下文环境 使用了就要类型校验  &amp;lt;–!more–&amp;gt; 在传入context的组件中要校验context类型并返回context12345678910111213141516171819202122class App extends Component &amp;#123;  constructor(props)&amp;#123;    super(props);    thi">
+<meta name="twitter:description" content="context了解一下 上下文环境 使用了就要类型校验">
 
 
 
@@ -390,7 +390,7 @@
 <li>上下文环境</li>
 <li>使用了就要类型校验</li>
 </ol>
-<p>&lt;–!more–&gt;</p>
+<a id="more"></a>
 <p>在传入context的组件中要校验context类型并返回context<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      user: <span class="string">'binyellow'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> childContextTypes = &#123;</span><br><span class="line">    user: propTypes.string</span><br><span class="line">  &#125;</span><br><span class="line">  getChildContext()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.state</span><br><span class="line">  &#125;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        App</span><br><span class="line">        &lt;GrandChild&gt;&lt;/GrandChild&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></p>
 <p>在使用context的组建中校验<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GrandChild</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">  <span class="keyword">static</span> contextTypes = &#123;</span><br><span class="line">    user: propTypes.string</span><br><span class="line">  &#125;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.context);</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        GrandChildName: &#123;<span class="keyword">this</span>.context.user&#125;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="高阶函数了解一下"><a href="#高阶函数了解一下" class="headerlink" title="高阶函数了解一下"></a>高阶函数了解一下</h3><ol>
