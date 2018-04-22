@@ -59,9 +59,11 @@ file-loader会把import进来的图片资源路径最后转换成输出目录图
 - .eslintrc.js中可配置extends:["standard"]等规范
 - 在rules：{}中添加自己的规范
 
-### tree-shaking
+#### tree-shaking
 - 把没有调用的引用筛掉
 - 然后`--optimize-minimize`: 最小化JavaScript并切换加载器以最小化
+
+#### 装饰器是`transform-decorator-legacy`
 
 ### 设置mode来快速
 
