@@ -442,6 +442,160 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/22/React-性能优化了解一下/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bin Yellow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YellowBin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/22/React-性能优化了解一下/" itemprop="url">React-性能优化了解一下</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-22T18:38:52+08:00">
+                2018-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Performance/" itemprop="url" rel="index">
+                    <span itemprop="name">Performance</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="性能优化总述"><a href="#性能优化总述" class="headerlink" title="性能优化总述"></a>性能优化总述</h3><ol>
+<li>减少dom操作</li>
+<li>减少网络请求</li>
+<li>优化访问速度</li>
+</ol>
+<h3 id="Chrome怎么查看React渲染的时间"><a href="#Chrome怎么查看React渲染的时间" class="headerlink" title="Chrome怎么查看React渲染的时间"></a>Chrome怎么查看React渲染的时间</h3><ul>
+<li>在url后面加?react_perf即可进performance查看性能图</li>
+</ul>
+<h3 id="关于React简单的优化"><a href="#关于React简单的优化" class="headerlink" title="关于React简单的优化"></a>关于React简单的优化</h3><ol>
+<li>当为onClick添加事件时,bind要在构造函数中执行,而不是在调用的时候每次渲染的时候bind</li>
+<li>当父组件render时,默认子组件也会render一次,所以子组件应该手动调用shouldComponentUpdate(nextProps,nextState)来决定是否渲染</li>
+<li>木偶组件直接继承PureComponent,定制了shouldComponentUpdate,当props或state没变化时不会渲染</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/15/VsCode-yarn总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -839,7 +993,24 @@
       
         
           
-            
+            <h3 id="context了解一下"><a href="#context了解一下" class="headerlink" title="context了解一下"></a>context了解一下</h3><ol>
+<li>上下文环境</li>
+<li>使用了就要类型校验</li>
+</ol>
+<p>&lt;–!more–&gt;</p>
+<p>在传入context的组件中要校验context类型并返回context<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      user: <span class="string">'binyellow'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> childContextTypes = &#123;</span><br><span class="line">    user: propTypes.string</span><br><span class="line">  &#125;</span><br><span class="line">  getChildContext()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.state</span><br><span class="line">  &#125;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        App</span><br><span class="line">        &lt;GrandChild&gt;&lt;/GrandChild&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>在使用context的组建中校验<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GrandChild</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">  <span class="keyword">static</span> contextTypes = &#123;</span><br><span class="line">    user: propTypes.string</span><br><span class="line">  &#125;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.context);</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        GrandChildName: &#123;<span class="keyword">this</span>.context.user&#125;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="高阶函数了解一下"><a href="#高阶函数了解一下" class="headerlink" title="高阶函数了解一下"></a>高阶函数了解一下</h3><ol>
+<li>connect函数形如:<code>connect(mapStateToProps,mapDispatchToProps)(APP)</code></li>
+<li>实质上是高阶函数中返回了一个高阶组件</li>
+<li><p>怎么实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">connect</span>(<span class="params">mapStateToProps,mapDispatchToProps</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">WrappedComponent</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="class"><span class="keyword">class</span> <span class="title">ConnectComponent</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>箭头函数实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> connect = <span class="function">(<span class="params">mapStateToProps,mapDispatchToProps</span>)=&gt;</span><span class="function">(<span class="params">WrappedComponent</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="class"><span class="keyword">class</span> <span class="title">ConnectComponent</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="connect是什么：connect其实就是给传入的组件包裹上context的属性-来拿到全局的属性store"><a href="#connect是什么：connect其实就是给传入的组件包裹上context的属性-来拿到全局的属性store" class="headerlink" title="connect是什么：connect其实就是给传入的组件包裹上context的属性,来拿到全局的属性store"></a>connect是什么：connect其实就是给传入的组件包裹上context的属性,来拿到全局的属性store</h3><h3 id="正题：connect如何实现"><a href="#正题：connect如何实现" class="headerlink" title="正题：connect如何实现"></a>正题：connect如何实现</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> connect = <span class="function">(<span class="params">mapStateToProps=state=&gt;state,mapDispatchToProps=&#123;&#125;</span>)=&gt;</span><span class="function">(<span class="params">WrappedComponent</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="class"><span class="keyword">class</span> <span class="title">ConnectComponent</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">        <span class="keyword">static</span> contextTypes = &#123;</span><br><span class="line">            store: propTypes.object</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">constructor</span>(props,context)&#123;</span><br><span class="line">            <span class="keyword">super</span>(props,context)</span><br><span class="line">            <span class="keyword">this</span>.state = &#123;</span><br><span class="line">                props:&#123;&#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        componentDidMount()&#123;</span><br><span class="line">            <span class="comment">//每次dispatch都会触发subscribe,利用此来更新stateProps</span></span><br><span class="line">            <span class="keyword">const</span> &#123;store&#125; = <span class="keyword">this</span>.context;</span><br><span class="line">            store.subscribe(<span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">this</span>.update())</span><br><span class="line">            <span class="keyword">this</span>.update()</span><br><span class="line">        &#125;</span><br><span class="line">        update()&#123;</span><br><span class="line">            <span class="keyword">const</span> &#123;store&#125; = <span class="keyword">this</span>.context;</span><br><span class="line">            <span class="built_in">console</span>.log(store);</span><br><span class="line">            <span class="comment">// 这里面来把state分发出去</span></span><br><span class="line">            <span class="keyword">const</span> stateProps = mapStateToProps(store.getState());</span><br><span class="line">            <span class="comment">// 这里把action都包一层dispatch</span></span><br><span class="line">            <span class="keyword">const</span> actionProps = bindActionCreators(mapDispatchToProps,store.dispatch)   <span class="comment">// bindActionCreators详见redux</span></span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                props: &#123;</span><br><span class="line">                    ...this.state.props,</span><br><span class="line">                    ...stateProps,</span><br><span class="line">                    ...actionProps</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        render()&#123;</span><br><span class="line">            <span class="keyword">return</span> (</span><br><span class="line">                <span class="comment">// 从context中获取的state和用dispatch包装后的action传给组件WrappedComponent</span></span><br><span class="line">                &lt;WrappedComponent &#123;...this.state.props&#125;&gt;&lt;/WrappedComponent&gt;</span><br><span class="line">            )</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1281,21 +1452,19 @@
 
       
         
-          
-            <h3 id="开始阅读前先回顾一下Redux的几个基本的API"><a href="#开始阅读前先回顾一下Redux的几个基本的API" class="headerlink" title="开始阅读前先回顾一下Redux的几个基本的API"></a>开始阅读前先回顾一下Redux的几个基本的API</h3><ol>
+          <h3 id="开始阅读前先回顾一下Redux的几个基本的API"><a href="#开始阅读前先回顾一下Redux的几个基本的API" class="headerlink" title="开始阅读前先回顾一下Redux的几个基本的API"></a>开始阅读前先回顾一下Redux的几个基本的API</h3><ol>
 <li><code>const store = createStore(reducer)</code></li>
 <li><code>store.dispatch(action)</code>发起一个动作让reducer匹配</li>
 <li><code>const state = store.getState()</code>获取当前的state</li>
 <li><code>store.subscribe(listener)</code>添加监听,每次dispatch都会触发监听函数</li>
-</ol>
-<h3 id="具体的调用"><a href="#具体的调用" class="headerlink" title="具体的调用"></a>具体的调用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reducer = (state=initialState,action)&#123;</span><br><span class="line">    <span class="keyword">switch</span>(action.type)&#123;</span><br><span class="line">        <span class="keyword">case</span> add:</span><br><span class="line">            <span class="keyword">return</span> state+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">delete</span>: </span><br><span class="line">            <span class="keyword">return</span> state<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer)</span><br><span class="line"><span class="keyword">const</span> state = store.getState()</span><br><span class="line"><span class="keyword">const</span> listener = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`现在有<span class="subst">$&#123;store.getState()把枪&#125;</span>`</span>)</span><br><span class="line">&#125;</span><br><span class="line">store.subscribe(listener);</span><br><span class="line">store.dispatch(&#123;<span class="attr">type</span>:add&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="Redux的简单实现"><a href="#Redux的简单实现" class="headerlink" title="Redux的简单实现"></a>Redux的简单实现</h3><h4 id="先理清思路"><a href="#先理清思路" class="headerlink" title="先理清思路"></a>先理清思路</h4><ol>
-<li>createStore函数创建的对象有getState、dispatch、subscribe方法</li>
-<li>创建完就可以获取到初始值default，那么在内部是不是就默认dispatch了一个特别特别特殊的action，来区别用户的action.type</li>
-<li>每次dispatch都会触发subscribe订阅的监听函数</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">createStore</span>(<span class="params">reducer</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> currentState = &#123;&#125;;</span><br><span class="line">    <span class="keyword">let</span> currentListeners = [];</span><br><span class="line">    <span class="comment">// getState比较简单就是返回当前state就行了</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getState</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> currentState;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 每订阅一个监听函数就推到监听函数数组里面</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">subscribe</span>(<span class="params">listener</span>)</span>&#123;</span><br><span class="line">        currentListener.push(listener);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    *   最主要就是dispatch如何实现了</span></span><br><span class="line"><span class="comment">    *   1. 首先是要改变state对吧？</span></span><br><span class="line"><span class="comment">    *   2. 然后要触发listener</span></span><br><span class="line"><span class="comment">    *   3. 返回一个action对象</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dispatch</span>(<span class="params">action</span>)</span>&#123;</span><br><span class="line">        currentState = reducer(currentState,action);</span><br><span class="line">        currentListeners.forEach(<span class="function"><span class="params">v</span>=&gt;</span>v())</span><br><span class="line">        <span class="keyword">return</span> action</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 这里手动dispatch一个动作来返回初始state</span></span><br><span class="line">    dispatch(&#123;<span class="attr">type</span>:<span class="string">'@huangbin-redux-study'</span>&#125;)</span><br><span class="line">    <span class="keyword">return</span> &#123;getState,subscribe,dispatch&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
+<li><code>bindActionCreators(actions,dispatch)</code>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/12/redux-code/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1632,157 +1801,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Sass你想知道的都在这里/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bin Yellow">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YellowBin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/31/Sass你想知道的都在这里/" itemprop="url">Sass你想知道的都在这里</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-31T12:22:29+08:00">
-                2017-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ol>
-<li>变量：<strong>$变量名</strong>;变量可以嵌套使用</li>
-<li>要写一大串指向页面中同一块的样式时，往往需要 一遍又一遍地写同一个ID</li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#content</span> <span class="selector-tag">article</span> <span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: <span class="number">#333</span> &#125;</span><br><span class="line"><span class="selector-id">#content</span> <span class="selector-tag">article</span> <span class="selector-tag">p</span> &#123; <span class="attribute">margin-bottom</span>: <span class="number">1.4em</span> &#125;</span><br><span class="line"><span class="selector-id">#content</span> <span class="selector-tag">aside</span> &#123; <span class="attribute">background-color</span>: <span class="number">#EEE</span> &#125;</span><br></pre></td></tr></table></figure>
-<p>像这种情况，sass可以让你只写一遍，且使样式可读性更高。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/31/Sass你想知道的都在这里/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1837,7 +1855,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1848,7 +1866,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1859,7 +1877,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
