@@ -53,4 +53,4 @@ npm i --save|yarn add|
 npm uninstall package --save|yarn remove package|
 npm i package -D|yarn add package -D|
 npm install [package] --global|yarn global add [package]|
-rm -rf node_modules && npm install|yarn upgrade|
+rm -rf node_modules && npm install|yarn upgrade []|
