@@ -12,6 +12,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[git小记]]></title>
+    <url>%2F2018%2F07%2F05%2Fgit%E5%B0%8F%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[创建的默认仓库是msater代码提交1234git add file //git add .添加所有git commit -m content //提交到本地仓库git pull [origin master] //从指定分支拉取代码git push 在本地创建仓库12git initgit remote add origin git@github.com:binyellow/test.git //关联到远程仓库 分支创建新分支git checkout -b name 删除分支 git branch -d name git push :remoteBranch查看分支 本地分支git branch 远程分支git branch -r分支回退 本地回退 git log查看记录 git reset --hard commitID 远程回退 git push HEAD --force]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[React-性能优化了解一下]]></title>
     <url>%2F2018%2F04%2F22%2FReact-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%8B%2F</url>
     <content type="text"><![CDATA[性能优化总述 减少dom操作 减少网络请求 优化访问速度 Chrome怎么查看React渲染的时间 在url后面加?react_perf即可进performance查看性能图 关于React简单的优化 当为onClick添加事件时,bind要在构造函数中执行,而不是在调用的时候每次渲染的时候bind 当父组件render时,默认子组件也会render一次,所以子组件应该手动调用shouldComponentUpdate(nextProps,nextState)来决定是否渲染 木偶组件直接继承PureComponent,定制了shouldComponentUpdate,当props或state没变化时不会渲染 使用immutable: 优点 减少内存使用 便于比较复杂数据,方便定制shouldComponentUpdate 函数式变程 并发安全 降低项目复杂度？ 缺点 库大小 项目入侵太严重 可替代库：seamless-immutable]]></content>
