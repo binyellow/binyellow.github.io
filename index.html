@@ -541,11 +541,17 @@
 <!--more-->
 <h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><h3 id="创建新分支"><a href="#创建新分支" class="headerlink" title="创建新分支"></a>创建新分支</h3><ol>
 <li><code>git checkout -b name</code></li>
-<li><code>git push origin localName:remoteName</code>   //本地推送到远程分支<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3></li>
+<li><code>git push origin localName:remoteName</code>   //本地推送到远程分支</li>
+</ol>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><ol>
 <li><code>git branch -d name</code></li>
-<li><code>git push :remoteBranch</code><h3 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h3></li>
+<li><code>git push :remoteBranch</code></li>
+</ol>
+<h3 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h3><ol>
 <li>本地分支<code>git branch</code></li>
-<li>远程分支<code>git branch -r</code><h3 id="分支回退"><a href="#分支回退" class="headerlink" title="分支回退"></a>分支回退</h3></li>
+<li>远程分支<code>git branch -r</code></li>
+</ol>
+<h3 id="分支回退"><a href="#分支回退" class="headerlink" title="分支回退"></a>分支回退</h3><ol>
 <li>本地回退<br> <code>git log</code>查看记录<br> <code>git reset --hard commitID</code></li>
 <li>远程回退<br> <code>git push HEAD --force</code></li>
 </ol>
