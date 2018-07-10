@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/network/https.png">
 <meta property="og:image" content="http://yoursite.com/img/network/OSI.jpg">
-<meta property="og:updated_time" content="2018-04-14T12:48:37.205Z">
+<meta property="og:updated_time" content="2018-07-10T03:42:21.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="想翻墙、无限流量，是不是应该先看看这些">
 <meta name="twitter:description" content="HTTPS 啥都别说先整张图 SSL加密层: 把http的内容加密后送到下层的TCP，从接收方看，这一层负责将TCP送来的数据解密还原成http的内容 数字证书：一种文件的名称，好比一个机构或人的签名，能够证明这个机构或人的真实性。其中包含的信息，用于实现上述功能 加密: 将明文通过加密变成密文，如果第三方无法解密的话，就算他获得密文也无能为力 对称加密：加密和解密使用相同的密钥 非对称密码算法:">
@@ -421,9 +421,11 @@
 </ul>
 </li>
 <li>为什么要第三次确认？<ul>
-<li>因为怕出现已失效的连接请求报文段<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4></li>
+<li>因为怕出现已失效的连接请求报文段</li>
 </ul>
 </li>
+</ol>
+<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4><ol>
 <li>为什么要四次挥手？<ul>
 <li>当服务器收到FIN时,很可能还没传完数据,所以先说我已经收到FIN指令了,等发送完再发FIN</li>
 </ul>
@@ -456,9 +458,9 @@
 </ul>
 <h3 id="SOCKET"><a href="#SOCKET" class="headerlink" title="SOCKET"></a>SOCKET</h3><ul>
 <li>socket是一种操作系统提供的进程间通信机制</li>
-<li>套接字接口: 以IP地址及通信端口组成套接字地址,远程的套接字地址，以及本地的套接字地址完成连接后，再加上使用的协议，这个五元组，作为套接字对，之后就可以彼此交换数据<h5 id="Socket-连接-至少需要一对套接字，分为-clientSocket，serverSocket-连接分为3个步骤"><a href="#Socket-连接-至少需要一对套接字，分为-clientSocket，serverSocket-连接分为3个步骤" class="headerlink" title="Socket 连接,至少需要一对套接字，分为 clientSocket，serverSocket 连接分为3个步骤:"></a>Socket 连接,至少需要一对套接字，分为 clientSocket，serverSocket 连接分为3个步骤:</h5></li>
+<li>套接字接口: 以IP地址及通信端口组成套接字地址,远程的套接字地址，以及本地的套接字地址完成连接后，再加上使用的协议，这个五元组，作为套接字对，之后就可以彼此交换数据</li>
 </ul>
-<ol>
+<h5 id="Socket-连接-至少需要一对套接字，分为-clientSocket，serverSocket-连接分为3个步骤"><a href="#Socket-连接-至少需要一对套接字，分为-clientSocket，serverSocket-连接分为3个步骤" class="headerlink" title="Socket 连接,至少需要一对套接字，分为 clientSocket，serverSocket 连接分为3个步骤:"></a>Socket 连接,至少需要一对套接字，分为 clientSocket，serverSocket 连接分为3个步骤:</h5><ol>
 <li>服务器监听:服务器并不定位具体客户端的套接字，而是时刻处于监听状态；</li>
 <li>客户端请求:客户端的套接字要描述它要连接的服务器的套接字，提供地址和端口号，然后向服务器套接字提出连接请求；</li>
 <li>连接确认:当服务器套接字收到客户端套接字发来的请求后，就响应客户端套接字的请求,并建立一个新的线程,把服务器端的套接字的描述发给客户端。一旦客户端确认了此描述，就正式建立连接。而服务器套接字继续处于监听状态，继续接收其他客户端套接字的连接请求.</li>
