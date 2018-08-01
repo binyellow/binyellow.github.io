@@ -88,7 +88,7 @@
 <meta property="og:description" content="对象:对象是属性的集合，对象是函数创建的，函数又是一种对象 obj={name:&amp;#39;huangbin&amp;#39;}&amp;lt;==&amp;gt;var obj = new Object(),obj.name=&amp;#39;huangbin&amp;#39;   function f1(x,y){return x+y}&amp;lt;==&amp;gt;var f1 = new Function(&amp;#39;x&amp;#39;,&amp;#39;y">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/07/31/原型知多少/img/js/prototype.png">
-<meta property="og:updated_time" content="2018-08-01T08:51:48.400Z">
+<meta property="og:updated_time" content="2018-08-01T12:52:05.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型知多少">
 <meta name="twitter:description" content="对象:对象是属性的集合，对象是函数创建的，函数又是一种对象 obj={name:&amp;#39;huangbin&amp;#39;}&amp;lt;==&amp;gt;var obj = new Object(),obj.name=&amp;#39;huangbin&amp;#39;   function f1(x,y){return x+y}&amp;lt;==&amp;gt;var f1 = new Function(&amp;#39;x&amp;#39;,&amp;#39;y">
@@ -437,7 +437,14 @@
 <li>当使用for-in获取对象枚举属性时要用hasOwnProperty来判断:判断属性是否存在当前对象中,而不是原型对象中,当在类或者构造函数中没把属性指定到this上,那么该属性就会自动挂载到原型对象上</li>
 <li>ES6中的class写法会导致属性不可枚举Object.keys</li>
 <li>obj instanceof Function: obj是否在构造函数的原型链上</li>
-<li>关于函数中的this<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var obj1=&#123;</span><br><span class="line">	num:4,</span><br><span class="line">	fn:function()&#123;</span><br><span class="line">		var f=() =&gt; &#123;    </span><br><span class="line">			console.log(this); //object,f()定义在obj1对象中，this就指向obj1,这就是箭头函数this指向的关键</span><br><span class="line">			setTimeout(function() &#123;</span><br><span class="line">				console.log(this);//window，非箭头函数的情况下还是要看宿主对象是谁，如果没有被对象调用，函数体中的this就绑定的window上</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;</span><br><span class="line">		f();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">obj1.fn();</span><br></pre></td></tr></table></figure>
+<li><p>关于函数中的this</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var obj1=&#123;</span><br><span class="line">	num:4,</span><br><span class="line">	fn:function()&#123;</span><br><span class="line">		var f=() =&gt; &#123;    </span><br><span class="line">			console.log(this); //object,f()定义在obj1对象中，this就指向obj1,这就是箭头函数this指向的关键</span><br><span class="line">			setTimeout(function() &#123;</span><br><span class="line">				console.log(this);//window，非箭头函数的情况下还是要看宿主对象是谁，如果没有被对象调用，函数体中的this就绑定的window上</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;</span><br><span class="line">		f();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">obj1.fn();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关于变量提升</p>
+<ul>
+<li>变量在生成执行上下文时，会帮其声明并赋值undefind</li>
+<li>函数则会将整个函数存入内存空间</li>
+</ul>
 </li>
 </ol>
 
