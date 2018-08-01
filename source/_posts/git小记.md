@@ -34,7 +34,7 @@ git remote add origin git@github.com:binyellow/test.git //关联到远程仓库
 
 #### 查看分支
 1. 本地分支`git branch`
-2. 远程分支`git branch -r`
+2. 远程分支`git branch -a/-r`
 
 #### 分支回退
 1. 本地回退
@@ -49,4 +49,6 @@ git remote add origin git@github.com:binyellow/test.git //关联到远程仓库
 #### 分支合并
 1. 从其他分支拉到当前分支
     `git pull origin remoteBranch[:localBranch]`
+2. 当其他分支更新后merge
+    `git merge develop`
 <!--more-->
