@@ -88,7 +88,7 @@
 <meta property="og:description" content="对象:对象是属性的集合，对象是函数创建的，函数又是一种对象 obj={name:&amp;#39;huangbin&amp;#39;}&amp;lt;==&amp;gt;var obj = new Object(),obj.name=&amp;#39;huangbin&amp;#39;   function f1(x,y){return x+y}&amp;lt;==&amp;gt;var f1 = new Function(&amp;#39;x&amp;#39;,&amp;#39;y">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/07/31/原型知多少/img/js/prototype.png">
-<meta property="og:updated_time" content="2018-07-31T14:02:29.700Z">
+<meta property="og:updated_time" content="2018-08-01T08:51:48.400Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型知多少">
 <meta name="twitter:description" content="对象:对象是属性的集合，对象是函数创建的，函数又是一种对象 obj={name:&amp;#39;huangbin&amp;#39;}&amp;lt;==&amp;gt;var obj = new Object(),obj.name=&amp;#39;huangbin&amp;#39;   function f1(x,y){return x+y}&amp;lt;==&amp;gt;var f1 = new Function(&amp;#39;x&amp;#39;,&amp;#39;y">
@@ -409,22 +409,15 @@
 <li>没有return语句</li>
 </ol>
 </li>
-<li>构造函数每定义一个函数就实例化了一个对象，会导致不同作用域链和标识符解析</li>
+<li>构造函数每定义一个函数就实例化了一个对象，会导致不同作用域链和标识符解析<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">	this.age = age,</span><br><span class="line">	this.sayName = function()&#123;</span><br><span class="line">		console.log(this.name)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 <li><p>原型模式</p>
 <ul>
 <li><p>可以让所有实例化的对象共享属性、方法</p>
-<pre><code>function Person(){}
-Person.prototype.name=&quot;huangbin&quot;;
-Person.prototype.sayname = function() {
-  alert(this.name);
-}
-var person1 = new Person();
-person1.sayname();//huangbin
-var person2 = new Person();
-alert(person1.sayname==person2.sayname)//true
-</code></pre></li>
+<figure class="highlight plain"><figcaption><span>Person()&#123;&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype.name=&quot;huangbin&quot;;</span><br><span class="line">Person.prototype.sayname = function() &#123;</span><br><span class="line">	alert(this.name);</span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person();</span><br><span class="line">person1.sayname();//huangbin</span><br><span class="line">var person2 = new Person();</span><br><span class="line">alert(person1.sayname==person2.sayname)//true</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 <li><p>[[Prototype]]指针指向<strong>构造函数的原型对象</strong>,在Firefox、Safari、Chrome中有<strong><strong>proto</strong>属性可以访问它</strong></p>
@@ -444,6 +437,8 @@ alert(person1.sayname==person2.sayname)//true
 <li>当使用for-in获取对象枚举属性时要用hasOwnProperty来判断:判断属性是否存在当前对象中,而不是原型对象中,当在类或者构造函数中没把属性指定到this上,那么该属性就会自动挂载到原型对象上</li>
 <li>ES6中的class写法会导致属性不可枚举Object.keys</li>
 <li>obj instanceof Function: obj是否在构造函数的原型链上</li>
+<li>关于函数中的this<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var obj1=&#123;</span><br><span class="line">	num:4,</span><br><span class="line">	fn:function()&#123;</span><br><span class="line">		var f=() =&gt; &#123;    </span><br><span class="line">			console.log(this); //object,f()定义在obj1对象中，this就指向obj1,这就是箭头函数this指向的关键</span><br><span class="line">			setTimeout(function() &#123;</span><br><span class="line">				console.log(this);//window，非箭头函数的情况下还是要看宿主对象是谁，如果没有被对象调用，函数体中的this就绑定的window上</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;</span><br><span class="line">		f();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">obj1.fn();</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 
       
