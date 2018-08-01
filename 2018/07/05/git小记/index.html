@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="YellowBin">
 <meta property="og:description" content="创建的默认仓库是msater代码提交1234git add file //git add .添加所有git commit -m content //提交到本地仓库git pull [origin master] //从指定分支拉取代码git push 在本地创建仓库12git initgit remote add origin git@github.com:binyellow/test.git /">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-10T03:40:00.850Z">
+<meta property="og:updated_time" content="2018-08-01T12:44:40.778Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git小记">
 <meta name="twitter:description" content="创建的默认仓库是msater代码提交1234git add file //git add .添加所有git commit -m content //提交到本地仓库git pull [origin master] //从指定分支拉取代码git push 在本地创建仓库12git initgit remote add origin git@github.com:binyellow/test.git /">
@@ -399,7 +399,7 @@
 </ol>
 <h4 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h4><ol>
 <li>本地分支<code>git branch</code></li>
-<li>远程分支<code>git branch -r</code></li>
+<li>远程分支<code>git branch -a/-r</code></li>
 </ol>
 <h4 id="分支回退"><a href="#分支回退" class="headerlink" title="分支回退"></a>分支回退</h4><ol>
 <li>本地回退<br> <code>git log</code>查看记录<br> <code>git reset --hard commitID</code></li>
@@ -407,7 +407,8 @@
 <li>重返过去<br> <code>git reflog</code><br> <code>git reset --hard versionCode</code></li>
 </ol>
 <h4 id="分支合并"><a href="#分支合并" class="headerlink" title="分支合并"></a>分支合并</h4><ol>
-<li>从其他分支拉到当前分支<br> <code>git pull origin remoteBranch[:localBranch]</code><!--more--></li>
+<li>从其他分支拉到当前分支<br> <code>git pull origin remoteBranch[:localBranch]</code></li>
+<li>当其他分支更新后merge<br> <code>git merge develop</code><!--more--></li>
 </ol>
 
       

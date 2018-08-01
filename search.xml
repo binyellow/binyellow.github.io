@@ -37,7 +37,7 @@
   <entry>
     <title><![CDATA[git小记]]></title>
     <url>%2F2018%2F07%2F05%2Fgit%E5%B0%8F%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[创建的默认仓库是msater代码提交1234git add file //git add .添加所有git commit -m content //提交到本地仓库git pull [origin master] //从指定分支拉取代码git push 在本地创建仓库12git initgit remote add origin git@github.com:binyellow/test.git //关联到远程仓库 分支创建新分支 git checkout -b name git push origin localName:remoteName //本地推送到远程分支 删除分支 git branch -d name git push :remoteBranch 查看分支 本地分支git branch 远程分支git branch -r 分支回退 本地回退 git log查看记录 git reset --hard commitID 远程回退 git push HEAD --force 重返过去 git reflog git reset --hard versionCode 分支合并 从其他分支拉到当前分支 git pull origin remoteBranch[:localBranch]]]></content>
+    <content type="text"><![CDATA[创建的默认仓库是msater代码提交1234git add file //git add .添加所有git commit -m content //提交到本地仓库git pull [origin master] //从指定分支拉取代码git push 在本地创建仓库12git initgit remote add origin git@github.com:binyellow/test.git //关联到远程仓库 分支创建新分支 git checkout -b name git push origin localName:remoteName //本地推送到远程分支 删除分支 git branch -d name git push :remoteBranch 查看分支 本地分支git branch 远程分支git branch -a/-r 分支回退 本地回退 git log查看记录 git reset --hard commitID 远程回退 git push HEAD --force 重返过去 git reflog git reset --hard versionCode 分支合并 从其他分支拉到当前分支 git pull origin remoteBranch[:localBranch] 当其他分支更新后merge git merge develop]]></content>
       <categories>
         <category>git</category>
       </categories>
