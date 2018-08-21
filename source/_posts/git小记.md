@@ -3,7 +3,7 @@ title: git小记
 date: 2018-07-05 20:12:09
 tags:
     - git
-categories: git
+categories: Git
 ---
 ### 创建的默认仓库是msater
 
@@ -45,6 +45,8 @@ git remote add origin git@github.com:binyellow/test.git //关联到远程仓库
 3. 重返过去
     `git reflog`
     `git reset --hard versionCode`
+4. 回退一个版本
+    `git reset --hard HEAD^`
 
 #### 分支合并
 1. 从其他分支拉到当前分支

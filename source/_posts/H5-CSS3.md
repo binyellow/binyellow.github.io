@@ -4,9 +4,7 @@ date: 2016-10-18 20:30:05
 tags:
     - H5
     - CSS3
-categories:
-    - CSS
-    - HTML
+categories: CSS
 ---
 ### CSS3
 #### Animation
